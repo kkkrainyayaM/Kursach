@@ -9,7 +9,6 @@
 #include <string>
 #include <algorithm>
 #include <time.h>
-//const int NotUsed = system("color F0");
 using namespace std;
 using std::string;
 #if defined(max)
@@ -18,7 +17,7 @@ using std::string;
 
 
 class User {
-protected:
+private:
 
 	int ID;
 	string name;
