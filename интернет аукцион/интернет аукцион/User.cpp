@@ -2,7 +2,6 @@
 #include "Lot.h"
 #include "List.h"
 
-// сеттер только устанавливает щначение в перепменну, чтение сделать в другой
 void User::setName(string name) {
 	this->name = name;
 }
