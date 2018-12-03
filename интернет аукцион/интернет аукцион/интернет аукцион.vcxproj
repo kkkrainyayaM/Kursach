@@ -111,18 +111,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="IDGenerator.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Lot.h" />
-    <ClInclude Include="Mapper.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Participant.h" />
     <ClInclude Include="participant.txt" />
+    <ClInclude Include="Seller.h" />
     <ClInclude Include="seller.txt" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DAO.cpp" />
+    <ClCompile Include="IDGenerator.cpp" />
     <ClCompile Include="Lot.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Participant.cpp" />
+    <ClCompile Include="Seller.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -9,6 +9,7 @@
 #include <string>
 #include <algorithm>
 #include <time.h>
+#include "IDGenerator.h"
 using namespace std;
 using std::string;
 #if defined(max)
@@ -25,18 +26,14 @@ private:
 	char password[15];
 
 public:
-	//static int status;
 	User() {
 		name = " ";
-		ID = 0;
+		ID = IDGenerator::getInstance()->getUserId();
 		strcpy_s(login, 15, " ");
 		strcpy_s(password, 15, " ");
 	};
-	User(int id) {
-		ID = id;
-	}
-	User(int id, string n, char* l, char* p) {
-		ID = id;
+	User(string n, char* l, char* p) {
+		ID = IDGenerator::getInstance()->getUserId();
 		name = n;
 		strcpy_s(login, 15, l);
 		strcpy_s(password, 15, p);
@@ -44,62 +41,18 @@ public:
 	virtual ~User() {
 		delete &name;
 	}
-	virtual void setName() = 0;
-	virtual void getName(int id) = 0;
+	void setName(string name);
+	void readName();
+	string getName();
 	void setLogPas();
-	virtual void setID() = 0;
-	virtual int getID(int id) = 0;
+	int getID();
 	void shifrPas();
+	char* getLogin();
+	char* getPassword();
 
-	friend istream& operator>> (istream& s, User& u);
-	friend ostream& operator<< (ostream& s, User& u);
+	//friend istream& operator>> (istream& s, User& u);
+	//friend ostream& operator<< (ostream& s, User& u);
 };
 
-class Seller : public User {
-	int raiting;
-
-public:
-	Seller() {
-		raiting = 0;
-	};
-	Seller(int id, string n, char* l, char* p, int r) : User(id, n, l, p) {
-		raiting = r;
-	};
-	~Seller() {
-		delete &name;
-	}
-	void setName();
-	void getName(int id);
-	void setID();
-	int retID();
-	int getID(int id);
-	void viewInf();
-	static void createLot(int idSel);
-
-	friend istream& operator>> (istream& q, Seller& s);
-	friend ostream& operator<< (ostream& q, Seller& s);
-};
-
-class Participant : public User {
-	float stavka;
-public:
-	Participant() {
-		stavka = 0;
-	}
-	Participant(int id, string n, char* l, char* p, float st) : User(id, n, l, p) {
-		stavka = st;
-	}
-	~Participant() {
-		delete &name;
-	}
-	void setName();
-	void getName(int id);
-	void setID();
-	int retID();
-	int getID(int id);
-	void myBuy();
 
 
-	friend istream& operator>> (istream& s, Participant& p);
-	friend ostream& operator<< (ostream& s, Participant& p);
-};

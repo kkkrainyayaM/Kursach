@@ -34,12 +34,12 @@ public:
 				val = val->m_next;
 			} // »наче достигнут конец списка. ”местно возбудить исключение
 		}
+	};
 
-	}
-	List() {}
 	List() {
 		ph = 0;//указатель на головной узел списка
 	};
+
 	void push_front(X const& val)
 	{
 		Node* ptmp = ph;
@@ -47,6 +47,7 @@ public:
 		ph->next = ptmp;
 		cout << "Ёлемент " << val << " добавлен в начало списка.\n";
 	}
+
 	void push_back(X const& val)
 	{
 		if (!ph)
@@ -60,6 +61,7 @@ public:
 		}
 		cout << "Ёлемент " << val << " добавлен в конец списка.\n";
 	}
+
 	void erase(X const& val)
 	{
 		while (ph && ph->data == val)
@@ -96,6 +98,16 @@ public:
 		}
 		return cntr;
 	}
+
+	size_t size() const {
+		size_t s = 0;
+	
+	for (Node* n = m_head; n != NULL; n = n->m_next) {
+			++s;
+		}
+		return s;
+	}
+
 	bool empty()const
 	{
 		return !static_cast<bool>(ph);
@@ -110,6 +122,18 @@ public:
 			ptmp = ptmp->next;
 		}
 	}
+	//провер≥ть елс≥ дл≥на сп≥ска меньше ≥ндекса
+	X* get(int index) const {
+		Node* node = ph;
+		for (int i = 0; i < index; i++) {
+			node = node->next();
+			if (node->next == nullptr) {
+				return nullptr;
+			}
+		}
+		return &(node->data);
+	}
+
 	~List()
 	{
 		Node* ptmp = 0;
@@ -137,18 +161,3 @@ private:
 	List(List const&);
 };
 
-class WorkFile {
-private:
-	List<Seller>selL;
-	List<Participant>partL;
-	List<User>userL;
-	List<Lot>lotL;
-	WorkFile* Instance;
-	WorkFile() {}
-	WorkFile(const WorkFile&);
-public:
-	static WorkFile& getInstance() {
-		static WorkFile Instance;
-		return Instance;
-	}
-};

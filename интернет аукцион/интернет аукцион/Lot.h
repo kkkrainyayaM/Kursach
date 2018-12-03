@@ -1,5 +1,6 @@
 #pragma once
-#pragma once
+#include <string.h> 
+using namespace std;
 class Lot {
 	int ID;
 	string title;
@@ -30,18 +31,23 @@ public:
 		delete &title;
 		delete &descr;
 	};
-	void setLot();
-	void setID();
+	//void setLot();
+	//void setID();
 	int getID();
-	static void printLots();
-	static void menuSort();
-	static void filtr();
-	static void sortTitle();
-	static void sortStVozr();
-	static void sortPrice();
-	void redact();
-	void buyLot(int num1, int idPart);
-	void deleteLot();
-	friend istream& operator>> (istream& s, Lot& l);
-	friend ostream& operator<< (ostream& s, Lot& l);
+	string getTitle();
+	string getDescr();
+	float getStartPrice();
+	float getMaxStavka();
+	float getBlicPrice();
+	int getPeriod();
+	//static void printLots();
+	//static void menuSort();
+	//static void filtr();
+	//static void sortTitle();
+	//static void sortStVozr();
+	//static void sortPrice();
+	//void redact();
+	//void buyLot(int num1, int idPart);
+	//void deleteLot();
+	friend ostream& operator<<(ostream& s, Lot& lot);
 };

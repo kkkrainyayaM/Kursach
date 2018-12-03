@@ -1,6 +1,5 @@
 #include "User.h"
 #include "Lot.h"
-#include "Mapper.h"
 #include "Menu.h"
 
 int main() {
@@ -8,7 +7,7 @@ int main() {
 	SetConsoleOutputCP(1251);
 	auto time = std::time(nullptr);
 	cout.imbue(std::locale("ru_RU.utf8"));
-	cout << std::put_time(std::gmtime(&time), "%c");
+	//cout << std::put_time(std::gmtime(&time), "%c");
 	char menu1 = NULL;
 	int vozvr;
 	cout << endl << endl << setw(65) << "ÈÍÒÅÐÍÅÒ-ÀÓÊÖÈÎÍ" << endl << endl;
@@ -25,7 +24,7 @@ int main() {
 		case '1':
 			system("cls");
 			vozvr = (Menu::registration());
-			Menu::setStatus(vozvr);
+			/*Menu::setStatus(vozvr);
 			switch (vozvr) {
 			case 1:
 				Menu::menuSel();
@@ -40,9 +39,9 @@ int main() {
 				system("pause");
 				break;
 			}
-			break;
+			break;*/
 
-		case '2':
+		/*case '2':
 		{
 			system("cls");
 			int Id = (Menu::autorization());
@@ -63,7 +62,7 @@ int main() {
 				break;
 			}
 			break;
-		}
+		}*/
 		case 27:
 			cout << "Âñåãî Äîáðîãî!";
 			break;

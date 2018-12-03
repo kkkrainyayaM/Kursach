@@ -1,125 +1,126 @@
 ﻿  User.cpp
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): error C2533: List<X>: конструкторы не разрешены для возвращаемого типа
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(138): note: выполняется компиляция ссылки на экземпляр шаблон класс "List<X>"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): error C2533: List<Seller>: конструкторы не разрешены для возвращаемого типа
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(142): note: выполняется компиляция ссылки на экземпляр шаблон класс "List<Seller>"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2556: List<Seller>::List(void): перегруженная функция отличается от "List<Seller>::List(void)" только возвращаемым типом
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Seller>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2371: List<Seller>::List: переопределение; различные базовые типы
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Seller>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(41): error C2059: синтаксическая ошибка: =
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(41): error C2238: непредвиденные лексемы перед ";"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): error C2533: List<Participant>: конструкторы не разрешены для возвращаемого типа
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(143): note: выполняется компиляция ссылки на экземпляр шаблон класс "List<Participant>"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2556: List<Participant>::List(void): перегруженная функция отличается от "List<Participant>::List(void)" только возвращаемым типом
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Participant>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2371: List<Participant>::List: переопределение; различные базовые типы
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Participant>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): error C2533: List<User>: конструкторы не разрешены для возвращаемого типа
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(144): note: выполняется компиляция ссылки на экземпляр шаблон класс "List<User>"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2556: List<User>::List(void): перегруженная функция отличается от "List<User>::List(void)" только возвращаемым типом
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<User>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2371: List<User>::List: переопределение; различные базовые типы
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<User>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): error C2533: List<Lot>: конструкторы не разрешены для возвращаемого типа
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(145): note: выполняется компиляция ссылки на экземпляр шаблон класс "List<Lot>"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2556: List<Lot>::List(void): перегруженная функция отличается от "List<Lot>::List(void)" только возвращаемым типом
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Lot>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2371: List<Lot>::List: переопределение; различные базовые типы
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Lot>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(147): error C2264: List<Seller>::List: ошибка в определении или объявлении функции; функция не вызвана
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(147): error C2264: List<Participant>::List: ошибка в определении или объявлении функции; функция не вызвана
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(147): error C2264: List<User>::List: ошибка в определении или объявлении функции; функция не вызвана
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(147): error C2264: List<Lot>::List: ошибка в определении или объявлении функции; функция не вызвана
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\user.cpp(16): error C2264: List<Seller>::List: ошибка в определении или объявлении функции; функция не вызвана
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\user.cpp(21): error C2440: reinterpret_cast: невозможно преобразовать "std::string" в "char *"
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\user.cpp(21): note: Для преобразования требуется конструктор или оператор пользовательского преобразования, который не может использоваться const_cast или reinterpret_cast
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\user.cpp(23): error C2039: push_back: не является членом "List<Seller>"
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(142): note:  см. объявление "List<Seller>"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\user.cpp(47): warning C4804: <: небезопасное использование типа "bool" в операции
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\user.cpp(83): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\user.cpp(107): error C2264: List<User>::List: ошибка в определении или объявлении функции; функция не вызвана
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\user.cpp(123): warning C4804: <: небезопасное использование типа "bool" в операции
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\user.cpp(150): warning C4804: <: небезопасное использование типа "bool" в операции
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\user.cpp(183): warning C4804: <: небезопасное использование типа "bool" в операции
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\user.cpp(203): warning C4804: <: небезопасное использование типа "bool" в операции
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\user.cpp(221): error C2660: Seller::createLot: функция не принимает 0 аргументов
+  Seller.cpp
+  Participant.cpp
   Menu.cpp
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): error C2533: List<X>: конструкторы не разрешены для возвращаемого типа
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(138): note: выполняется компиляция ссылки на экземпляр шаблон класс "List<X>"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): error C2533: List<Seller>: конструкторы не разрешены для возвращаемого типа
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(142): note: выполняется компиляция ссылки на экземпляр шаблон класс "List<Seller>"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2556: List<Seller>::List(void): перегруженная функция отличается от "List<Seller>::List(void)" только возвращаемым типом
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Seller>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2371: List<Seller>::List: переопределение; различные базовые типы
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Seller>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(41): error C2059: синтаксическая ошибка: =
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(41): error C2238: непредвиденные лексемы перед ";"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): error C2533: List<Participant>: конструкторы не разрешены для возвращаемого типа
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(143): note: выполняется компиляция ссылки на экземпляр шаблон класс "List<Participant>"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2556: List<Participant>::List(void): перегруженная функция отличается от "List<Participant>::List(void)" только возвращаемым типом
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Participant>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2371: List<Participant>::List: переопределение; различные базовые типы
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Participant>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): error C2533: List<User>: конструкторы не разрешены для возвращаемого типа
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(144): note: выполняется компиляция ссылки на экземпляр шаблон класс "List<User>"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2556: List<User>::List(void): перегруженная функция отличается от "List<User>::List(void)" только возвращаемым типом
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<User>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2371: List<User>::List: переопределение; различные базовые типы
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<User>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): error C2533: List<Lot>: конструкторы не разрешены для возвращаемого типа
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(145): note: выполняется компиляция ссылки на экземпляр шаблон класс "List<Lot>"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2556: List<Lot>::List(void): перегруженная функция отличается от "List<Lot>::List(void)" только возвращаемым типом
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Lot>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2371: List<Lot>::List: переопределение; различные базовые типы
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Lot>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(147): error C2264: List<Seller>::List: ошибка в определении или объявлении функции; функция не вызвана
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(147): error C2264: List<Participant>::List: ошибка в определении или объявлении функции; функция не вызвана
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(147): error C2264: List<User>::List: ошибка в определении или объявлении функции; функция не вызвана
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(147): error C2264: List<Lot>::List: ошибка в определении или объявлении функции; функция не вызвана
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\menu.cpp(143): error C2264: List<User>::List: ошибка в определении или объявлении функции; функция не вызвана
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\menu.cpp(154): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\menu.cpp(169): warning C4804: <: небезопасное использование типа "bool" в операции
-  Main.cpp
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\main.cpp(11): error C4996: 'gmtime': This function or variable may be unsafe. Consider using gmtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\time.h(495): note:  см. объявление "gmtime"
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\dao.cpp(70): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\dao.cpp(79): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\dao.cpp(88): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(129): error C2064: результатом вычисления фрагмента не является функция, принимающая 0 аргументов
+  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(126): note: при компиляции функции-члена "<Нет данных>" класса класс <Нет данных>
+  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\dao.cpp(89): note: выполняется компиляция ссылки на экземпляр шаблон функции "Lot *List<Lot>::get(int) const"
+  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\dao.cpp(12): note: выполняется компиляция ссылки на экземпляр шаблон класс "List<Lot>"
   Lot.cpp
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): error C2533: List<X>: конструкторы не разрешены для возвращаемого типа
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(138): note: выполняется компиляция ссылки на экземпляр шаблон класс "List<X>"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): error C2533: List<Seller>: конструкторы не разрешены для возвращаемого типа
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(142): note: выполняется компиляция ссылки на экземпляр шаблон класс "List<Seller>"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2556: List<Seller>::List(void): перегруженная функция отличается от "List<Seller>::List(void)" только возвращаемым типом
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Seller>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2371: List<Seller>::List: переопределение; различные базовые типы
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Seller>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(41): error C2059: синтаксическая ошибка: =
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(41): error C2238: непредвиденные лексемы перед ";"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): error C2533: List<Participant>: конструкторы не разрешены для возвращаемого типа
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(143): note: выполняется компиляция ссылки на экземпляр шаблон класс "List<Participant>"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2556: List<Participant>::List(void): перегруженная функция отличается от "List<Participant>::List(void)" только возвращаемым типом
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Participant>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2371: List<Participant>::List: переопределение; различные базовые типы
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Participant>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): error C2533: List<User>: конструкторы не разрешены для возвращаемого типа
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(144): note: выполняется компиляция ссылки на экземпляр шаблон класс "List<User>"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2556: List<User>::List(void): перегруженная функция отличается от "List<User>::List(void)" только возвращаемым типом
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<User>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2371: List<User>::List: переопределение; различные базовые типы
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<User>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): error C2533: List<Lot>: конструкторы не разрешены для возвращаемого типа
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(145): note: выполняется компиляция ссылки на экземпляр шаблон класс "List<Lot>"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2556: List<Lot>::List(void): перегруженная функция отличается от "List<Lot>::List(void)" только возвращаемым типом
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Lot>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(40): error C2371: List<Lot>::List: переопределение; различные базовые типы
-  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(39): note:  см. объявление "List<Lot>::List"
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(147): error C2264: List<Seller>::List: ошибка в определении или объявлении функции; функция не вызвана
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(147): error C2264: List<Participant>::List: ошибка в определении или объявлении функции; функция не вызвана
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(147): error C2264: List<User>::List: ошибка в определении или объявлении функции; функция не вызвана
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\list.h(147): error C2264: List<Lot>::List: ошибка в определении или объявлении функции; функция не вызвана
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.cpp(16): warning C4804: <: небезопасное использование типа "bool" в операции
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.cpp(40): warning C4804: <: небезопасное использование типа "bool" в операции
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.cpp(84): warning C4804: <: небезопасное использование типа "bool" в операции
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.cpp(122): warning C4804: <: небезопасное использование типа "bool" в операции
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.cpp(146): warning C4804: <: небезопасное использование типа "bool" в операции
-c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.cpp(170): warning C4804: <: небезопасное использование типа "bool" в операции
+  DAO.cpp
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(6): error C3646: title: неизвестный спецификатор переопределения
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(6): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(7): error C3646: descr: неизвестный спецификатор переопределения
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(7): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(22): error C2061: синтаксическая ошибка: идентификатор "string"
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(22): error C2535: Lot::Lot(void): функция-член уже определена или объявлена
+  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(14): note:  см. объявление "Lot::Lot"
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(37): error C3646: getTitle: неизвестный спецификатор переопределения
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(37): error C2059: синтаксическая ошибка: (
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(37): error C2238: непредвиденные лексемы перед ";"
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(38): error C3646: getDescr: неизвестный спецификатор переопределения
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(38): error C2059: синтаксическая ошибка: (
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(38): error C2238: непредвиденные лексемы перед ";"
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(52): error C2143: синтаксическая ошибка: отсутствие ";" перед "&"
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(52): error C2433: ostream: "friend" не разрешается для объявлений данных
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(52): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(52): error C2238: непредвиденные лексемы перед ";"
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(15): error C2065: title: необъявленный идентификатор
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(16): error C2065: descr: необъявленный идентификатор
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(23): error C2065: id: необъявленный идентификатор
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(24): error C2065: title: необъявленный идентификатор
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(24): error C2065: t: необъявленный идентификатор
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(25): error C2065: descr: необъявленный идентификатор
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(25): error C2065: d: необъявленный идентификатор
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(26): error C2065: s: необъявленный идентификатор
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(27): error C2065: b: необъявленный идентификатор
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(28): error C2065: p: необъявленный идентификатор
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(31): error C2065: title: необъявленный идентификатор
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(31): error C2541: delete: нельзя удалять объекты, не являющиеся указателями
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(32): error C2065: descr: необъявленный идентификатор
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(32): error C2541: delete: нельзя удалять объекты, не являющиеся указателями
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\participant.h(14): error C2872: ostream: неоднозначный символ
+  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.h(52): note: может быть "int ostream"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\iosfwd(625): note: или       "std::ostream"
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\participant.h(14): error C2143: синтаксическая ошибка: отсутствие ";" перед "&"
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\participant.h(14): error C2433: ostream: "friend" не разрешается для объявлений данных
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\participant.h(14): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\participant.h(14): error C2238: непредвиденные лексемы перед ";"
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\dao.cpp(70): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\dao.cpp(79): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\dao.cpp(88): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\dao.cpp(106): error C2679: бинарный "<<": не найден оператор, принимающий правый операнд типа "Participant" (или приемлемое преобразование отсутствует)
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(488): note: может быть "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_streambuf<char,std::char_traits<char>> *)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(468): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(const void *)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(448): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long double)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(428): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(double)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(408): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(float)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(388): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned __int64)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(368): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(__int64)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(348): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned long)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(328): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(308): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned int)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(283): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(int)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(263): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned short)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(229): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(short)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(209): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(bool)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(203): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::ios_base &(__cdecl *)(std::ios_base &))"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(197): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ios<char,std::char_traits<char>> &(__cdecl *)(std::basic_ios<char,std::char_traits<char>> &))"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(192): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ostream<char,std::char_traits<char>> &(__cdecl *)(std::basic_ostream<char,std::char_traits<char>> &))"
+  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\seller.h(21): note: или       "std::ostream &operator <<(std::ostream &,Seller &)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(1011): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const std::error_code &)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(973): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>,Participant>(std::basic_ostream<char,std::char_traits<char>> &&,const _Ty &)"
+          with
+          [
+              _Ty=Participant
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(963): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,unsigned char)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(956): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const unsigned char *)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(949): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,signed char)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(942): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const signed char *)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(816): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,char)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(769): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(731): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,char)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(684): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)"
+  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\dao.cpp(106): note: при попытке сопоставить список аргументов "(std::ofstream, Participant)"
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\dao.cpp(113): error C2679: бинарный "<<": не найден оператор, принимающий правый операнд типа "Lot" (или приемлемое преобразование отсутствует)
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(488): note: может быть "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_streambuf<char,std::char_traits<char>> *)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(468): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(const void *)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(448): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long double)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(428): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(double)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(408): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(float)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(388): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned __int64)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(368): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(__int64)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(348): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned long)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(328): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(308): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned int)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(283): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(int)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(263): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned short)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(229): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(short)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(209): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(bool)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(203): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::ios_base &(__cdecl *)(std::ios_base &))"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(197): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ios<char,std::char_traits<char>> &(__cdecl *)(std::basic_ios<char,std::char_traits<char>> &))"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(192): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ostream<char,std::char_traits<char>> &(__cdecl *)(std::basic_ostream<char,std::char_traits<char>> &))"
+  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\seller.h(21): note: или       "std::ostream &operator <<(std::ostream &,Seller &)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(1011): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const std::error_code &)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(973): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>,Lot>(std::basic_ostream<char,std::char_traits<char>> &&,const _Ty &)"
+          with
+          [
+              _Ty=Lot
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(963): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,unsigned char)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(956): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const unsigned char *)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(949): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,signed char)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(942): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const signed char *)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(816): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,char)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(769): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(731): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,char)"
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\ostream(684): note: или       "std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)"
+  c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\dao.cpp(113): note: при попытке сопоставить список аргументов "(std::ofstream, Lot)"
   Создание кода...
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\lot.cpp(199): error C4716: operator<<: должна возвращать значение
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\participant.cpp(10): error C4716: operator<<: должна возвращать значение
+c:\users\rizhi\documents\курсовая работа\интернет аукцион\интернет аукцион\seller.cpp(95): error C4716: operator<<: должна возвращать значение
