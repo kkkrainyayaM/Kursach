@@ -7,4 +7,5 @@ void Participant::myBuy() {
 ostream& operator<< (ostream& s, Participant& p) {
 	s << p.getID() << " " << p.getLogin() << " " << p.getPassword() << " " <<
 		p.getName() << " " << endl;
+	return s;
 }

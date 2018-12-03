@@ -111,8 +111,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="IDGenerator.h" />
-    <ClInclude Include="List.h" />
     <ClInclude Include="Lot.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Participant.h" />

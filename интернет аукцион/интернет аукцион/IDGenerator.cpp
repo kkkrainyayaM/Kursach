@@ -1,22 +1,37 @@
-#include "IDGenerator.h"
+#include <fstream>
+using namespace std;
+
+class IDGenerator
+{
+private:
+	int userId;
+	int lotId;
+	IDGenerator();
+	~IDGenerator();
+	void init();
+	
+public:
+	int getUserId();
+	int getLotId();
+	static IDGenerator* getInstance();
+};
+
 
 IDGenerator* IDGenerator::getInstance() {
-	if (instance == nullptr) {
-		instance = new IDGenerator();
-		init();
-		return instance;
-	}
+	static IDGenerator* instance = new IDGenerator();
+	return instance;
 }
 
 IDGenerator::IDGenerator()
 {
+	init();
 }
 
 IDGenerator::~IDGenerator()
 {
 	ofstream file("ID.txt", ios::in | ios::binary | ios::trunc);
 	if (file.is_open()) {
-		file << instance->userId << '\n' << instance->lotId << '\n';
+		file << userId << '\n' << lotId << '\n';
 	}
 	file.close();
 }
@@ -32,8 +47,8 @@ int IDGenerator::getLotId() {
 void IDGenerator::init() {
 	ifstream file("ID.txt", ios::in | ios::binary);
 	if (file.is_open()) {
-		file >> instance->userId;
-		file >> instance->lotId;
+		file >> this->userId;
+		file >> this->lotId;
 	}
 	file.close();
 }

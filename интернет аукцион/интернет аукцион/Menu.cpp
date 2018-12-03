@@ -2,7 +2,6 @@
 #include "Seller.h"
 #include "Participant.h"
 #include "Lot.h"
-#include "List.h"
 #include "Menu.h"
 #include "DAO.cpp"
 

@@ -92,4 +92,5 @@ int Seller::getRaiting() {
 ostream& operator<< (ostream& s, Seller& seller) {
 	s << seller.getID() << " " << seller.getLogin() << " " << seller.getPassword() << " " <<
 		seller.getName() << " " << seller.getRaiting() << endl;
+	return s;
 }

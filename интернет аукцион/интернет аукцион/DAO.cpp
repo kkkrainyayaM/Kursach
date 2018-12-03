@@ -1,93 +1,87 @@
 #pragma once
 #include "Lot.h"
-#include "List.h"
+#include <vector>
 #include "User.h"
 #include "Participant.h"
 #include "Seller.h"
 
 class DAO {
 private:
-	List<Seller> sellerList;
-	List<Participant> participantList;
-	List<Lot> lotList;
-	static DAO* instance;
+	vector<Seller> sellers;
+	vector<Participant> participants;
+	vector<Lot> lots;
 	DAO() {
-		instance->sellerList = List<Seller>();
-		instance->participantList = List<Participant>();
-		instance->lotList = List<Lot>();
+		initSellervector();
+		initPartvector();
+		initLotvector();
 	}
 	DAO(const DAO&);
 public:
 	static DAO& getInstance() {
-		if (instance == NULL) {
-			instance = new DAO();
-			instance->initSellerList();
-			instance->initPartList();
-			instance->initLotList();
-		}
+		static DAO* instance = new DAO();
 		return *instance;
 	}
 
-	void initSellerList() {
+	void initSellervector() {
 		ifstream file("seller.txt", ios::in | ios::binary);
 		while (!(file.eof())) {
 			Seller seller = Seller();
-			sellerList.push_back(seller);
+			sellers.push_back(seller);
 		}
 		file.close();
 	}
 
-	void initPartList() {
+	void initPartvector() {
 		ifstream file("participant.txt", ios::in | ios::binary);
 		while (!(file.eof())) {
 			Participant participant = Participant();
-			participantList.push_back(participant);
+			participants.push_back(participant);
 		}
 		file.close();
 	}
-	void initLotList() {
+	void initLotvector() {
 		ifstream file("lots.txt", ios::in | ios::binary);
 		while (!(file.eof())) {
 			Lot lot = Lot();
-			lotList.push_back(lot);
+			lots.push_back(lot);
 		}
 		file.close();
 	}
 
-	List<Seller>& getAllSellers() {
-		return sellerList;
+	vector<Seller>& getAllSellers() {
+		return sellers;
 	}
 
-	List<Participant>& getAllPart() {
-		return participantList;
+	vector<Participant>& getAllPart() {
+		return participants;
 	}
 
-	List<Lot>& getAllLots() {
-		return lotList;
+	vector<Lot>& getAllLots() {
+		return lots;
 	}
 
 	Seller* getSellerById(int id) {
-		for (int i = 0; i < sellerList.size(); i++) {
-			if (sellerList.get(i)->getID() == id) {
-				return sellerList.get(i);
+		for (int i = 0; i < sellers.size(); i++) {
+			if (sellers[i].getID() == id) {
+				return &sellers[i];
 			}
 		}
 		return NULL;
 	}
 	
 	Participant* getPartById(int id) {
-		for (int i = 0; i < participantList.size(); i++) {
-			if (participantList.get(i)->getID() == id) {
-				return participantList.get(i);
+		for (int i = 0; i < participants.size(); i++) {
+			if (participants[i].getID() == id) {
+				return &participants[i];
 			}
 		}
 		return NULL;
 	}
 
 	Lot* getLotById(int id) {
-		for (int i = 0; i < lotList.size(); i++) {
-			if (lotList.get(i)->getID() == id) {
-				return lotList.get(i);
+		for (int i = 0; i < lots.size(); i++) {
+			if (lots[i].getID() == id) {
+				return &lots[i];
 			}
 		}
 		return NULL;
@@ -98,6 +92,7 @@ public:
 		file.open("seller.txt", ios::binary | ios::app | ios::out);
 		file << seller;
 		file.close();
+		sellers.push_back(seller);
 	}
 
 	void saveParticipant(Participant participant) {
@@ -105,6 +100,7 @@ public:
 		file.open("participant.txt", ios::binary | ios::app | ios::out);
 		file << participant;
 		file.close();
+		participants.push_back(participant);
 	}
 
 	void saveLot(Lot lot) {
@@ -112,5 +108,6 @@ public:
 		file.open("lots.txt", ios::binary | ios::app | ios::out);
 		file << lot;
 		file.close();
+		lots.push_back(lot);
 	}
 };

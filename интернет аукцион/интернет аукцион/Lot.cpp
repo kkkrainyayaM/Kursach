@@ -1,6 +1,5 @@
 #include "User.h"
 #include "Lot.h"
-#include "List.h"
 #include "Menu.h"
 //void Lot::setID() {
 //	const int LEN = 4;
@@ -196,6 +195,7 @@ int Lot::getID() {
 ostream& operator<< (ostream& s, Lot& lot) {
 	s << lot.getID() << " " << lot.getTitle() << " " << lot.getDescr() << " " <<
 		lot.getStartPrice() << " " << lot.getMaxStavka() << " " << lot.getBlicPrice()<< " " << lot.getPeriod() << endl;
+	return s;
 }
 
 string Lot::getTitle() {
