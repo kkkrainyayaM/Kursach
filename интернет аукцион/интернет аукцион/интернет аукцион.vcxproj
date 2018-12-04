@@ -111,7 +111,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DAO.h" />
+    <ClInclude Include="DAO.cpp" />
     <ClInclude Include="Lot.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Participant.h" />
