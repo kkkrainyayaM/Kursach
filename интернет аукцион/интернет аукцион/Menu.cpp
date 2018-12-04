@@ -3,7 +3,7 @@
 #include "Participant.h"
 #include "Lot.h"
 #include "Menu.h"
-#include "DAO.cpp"
+#include "DAO.h"
 
 int Menu::registration() {
 	char menu2 = NULL;
@@ -17,7 +17,8 @@ int Menu::registration() {
 			cout << "ÐÅÃÈÑÒÐÀÖÈß" << endl;
 			seller->readName();
 			seller->setLogPas();
-			DAO::getInstance().saveSeller(*seller);
+			DAO::getInstance()->initSellervector();
+			//s->saveSeller(*seller);
 			cout << "Ðåãèñòðàöèÿ ïðîøëà óñïåøíî!" << endl;
 			vozvr = 1;
 			break;
@@ -28,7 +29,7 @@ int Menu::registration() {
 			cout << "ÐÅÃÈÑÒÐÀÖÈß" << endl;
 			participant->readName();
 			participant->setLogPas();
-			DAO::getInstance().saveParticipant(*participant);
+			//DAO::getInstance().saveParticipant(*participant);
 			cout << "Ðåãèñòðàöèÿ ïðîøëà óñïåøíî!" << endl;
 			vozvr = 2;
 			break;

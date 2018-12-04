@@ -8,8 +8,10 @@ public:
 	}
 	~Participant() {
 		//вызвать деструктор юзера
+		User::~User();
 	}
 	void myBuy();
+
 
 	friend ostream& operator<< (ostream& s, Participant& p);
 };

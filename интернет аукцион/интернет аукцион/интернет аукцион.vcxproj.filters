@@ -36,6 +36,12 @@
     <ClInclude Include="Lot.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="Stavka.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="DAO.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -50,9 +56,6 @@
     <ClCompile Include="Lot.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="DAO.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Seller.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -60,6 +63,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="IDGenerator.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Stavka.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,6 +77,9 @@
       <Filter>Файлы ресурсов</Filter>
     </Text>
     <Text Include="ID.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="stavki.txt">
       <Filter>Файлы ресурсов</Filter>
     </Text>
   </ItemGroup>

@@ -5,9 +5,9 @@
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	auto time = std::time(nullptr);
-	cout.imbue(std::locale("ru_RU.utf8"));
-	//cout << std::put_time(std::gmtime(&time), "%c");
+	//auto time = std::time(nullptr);
+	//cout.imbue(std::locale("ru_RU.utf8"));
+	//cout << std::put_time(std::gmtime(&time), "%c"); äîáàâèòü âðåìÿ
 	char menu1 = NULL;
 	int vozvr;
 	cout << endl << endl << setw(65) << "ÈÍÒÅÐÍÅÒ-ÀÓÊÖÈÎÍ" << endl << endl;

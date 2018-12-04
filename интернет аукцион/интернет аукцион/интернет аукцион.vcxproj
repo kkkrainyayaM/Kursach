@@ -111,28 +111,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DAO.h" />
     <ClInclude Include="Lot.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Participant.h" />
     <ClInclude Include="participant.txt" />
     <ClInclude Include="Seller.h" />
     <ClInclude Include="seller.txt" />
+    <ClInclude Include="Stavka.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DAO.cpp" />
     <ClCompile Include="IDGenerator.cpp" />
     <ClCompile Include="Lot.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Participant.cpp" />
     <ClCompile Include="Seller.cpp" />
+    <ClCompile Include="Stavka.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="log_pas.txt" />
     <Text Include="ID.txt" />
     <Text Include="lots.txt" />
+    <Text Include="stavki.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

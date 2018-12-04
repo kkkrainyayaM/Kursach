@@ -39,7 +39,7 @@ public:
 		strcpy_s(password, 15, p);
 	}
 	virtual ~User() {
-		delete &name;
+		//delete &name;
 	}
 	void setName(string name);
 	void readName();

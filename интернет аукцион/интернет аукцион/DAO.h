@@ -4,22 +4,33 @@
 #include "User.h"
 #include "Participant.h"
 #include "Seller.h"
+#include "Stavka.h"
 
 class DAO {
 private:
 	vector<Seller> sellers;
 	vector<Participant> participants;
 	vector<Lot> lots;
+	vector<Stavka> stavki;
+	static DAO *instance;
 	DAO() {
-		initSellervector();
-		initPartvector();
-		initLotvector();
+		instance->initSellervector();
+		instance->initPartvector();
+		instance->initLotvector();
+		instance->initStavkavector();
 	}
-	DAO(const DAO&);
+	//DAO(const DAO&);
 public:
-	static DAO& getInstance() {
-		static DAO* instance = new DAO();
-		return *instance;
+	/*static DAO& getInstance() {
+	static DAO* instance = new DAO();
+	return *instance;
+	}*/
+public:
+	static DAO *getInstance() {
+		//if (!instance) {
+			instance = new DAO;
+		//}
+		return instance;
 	}
 
 	void initSellervector() {
@@ -48,6 +59,15 @@ public:
 		file.close();
 	}
 
+	void initStavkavector() {
+		ifstream file("stavki.txt", ios::in | ios::binary);
+		while (!(file.eof())) {
+			Stavka stavka = Stavka();
+			stavki.push_back(stavka);
+		}
+		file.close();
+	}
+
 	vector<Seller>& getAllSellers() {
 		return sellers;
 	}
@@ -60,6 +80,10 @@ public:
 		return lots;
 	}
 
+	vector<Stavka>& getAllStavki() {
+		return stavki;
+	}
+
 	Seller* getSellerById(int id) {
 		for (int i = 0; i < sellers.size(); i++) {
 			if (sellers[i].getID() == id) {
@@ -68,7 +92,7 @@ public:
 		}
 		return NULL;
 	}
-	
+
 	Participant* getPartById(int id) {
 		for (int i = 0; i < participants.size(); i++) {
 			if (participants[i].getID() == id) {
@@ -82,6 +106,24 @@ public:
 		for (int i = 0; i < lots.size(); i++) {
 			if (lots[i].getID() == id) {
 				return &lots[i];
+			}
+		}
+		return NULL;
+	}
+
+	Stavka* getStavkaByIdPart(int id) {
+		for (int i = 0; i < stavki.size(); i++) {
+			if (stavki[i].getIDPart() == id) {
+				return &stavki[i];
+			}
+		}
+		return NULL;
+	}
+
+	Stavka* getStavkaByIdLot(int id) {
+		for (int i = 0; i < stavki.size(); i++) {
+			if (stavki[i].getIDLot() == id) {
+				return &stavki[i];
 			}
 		}
 		return NULL;
@@ -110,4 +152,13 @@ public:
 		file.close();
 		lots.push_back(lot);
 	}
+
+	void saveStavka(Stavka stavka) {
+		ofstream file;
+		file.open("stavki.txt", ios::binary | ios::app | ios::out);
+		file << stavka;
+		file.close();
+		stavki.push_back(stavka);
+	}
 };
+DAO *DAO::instance = 0;
