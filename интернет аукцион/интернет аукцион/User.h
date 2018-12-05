@@ -38,6 +38,13 @@ public:
 		strcpy_s(login, 15, l);
 		strcpy_s(password, 15, p);
 	}
+
+	User(int id, string n, char* l, char* p) {
+		ID = id;
+		name = n;
+		strcpy_s(login, 15, l);
+		strcpy_s(password, 15, p);
+	}
 	virtual ~User() {
 		//delete &name;
 	}

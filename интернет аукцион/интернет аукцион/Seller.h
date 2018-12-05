@@ -11,6 +11,9 @@ public:
 	Seller(string n, char* l, char* p, int r) : User(n, l, p) {
 		raiting = r;
 	};
+	Seller(int id, string n, char* l, char* p, int r) : User(id, n, l, p) {
+		raiting = r;
+	};
 	~Seller() {
 		//вызвать деструктор 
 	}

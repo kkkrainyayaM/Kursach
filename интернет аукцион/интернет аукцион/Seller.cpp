@@ -94,3 +94,4 @@ ostream& operator<< (ostream& s, Seller& seller) {
 		seller.getName() << " " << seller.getRaiting() << endl;
 	return s;
 }
+
