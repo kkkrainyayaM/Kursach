@@ -26,7 +26,7 @@ void User::setLogPas() {
 	int q = 0;
 	while (q == 0) {
 		cout << "¬ведите пароль: "; cin.getline(password, 15);
-		if ((strlen(password) > 4) || (strlen(password) < 14)) {
+		if ((strlen(password) > 4) & (strlen(password) < 14)) {
 			q = 1;
 			break;
 		}

@@ -9,9 +9,9 @@
 class DAO {
 private:
 	vector<Seller> sellers = vector<Seller>();
-	vector<Participant> participants = vector<Participant>();;
-	vector<Lot> lots = vector<Lot>();;
-	vector<Stavka> stavki = vector<Stavka>();;
+	vector<Participant> participants = vector<Participant>();
+	vector<Lot> lots = vector<Lot>();
+	vector<Stavka> stavki = vector<Stavka>();
 	static DAO *instance;
 	DAO() {
 	}
@@ -32,7 +32,11 @@ private:
 	void initPartVector() {
 		ifstream file("participant.txt", ios::in | ios::binary);
 		while (!(file.eof())) {
-			Participant participant = Participant();
+			int id;
+			string name;
+			char login[15], password[15];
+			file >> id >> name >> login >> password;
+			Participant participant = Participant(id, name, login, password);
 			participants.push_back(participant);
 		}
 		file.close();
@@ -40,7 +44,11 @@ private:
 	void initLotVector() {
 		ifstream file("lots.txt", ios::in | ios::binary);
 		while (!(file.eof())) {
-			Lot lot = Lot();
+			int ID, period;
+			string title, descr;
+			float startPrice, maxStavka, blicPrice;
+			file >> ID >> title >> descr >> startPrice >> maxStavka >> blicPrice >> period;
+			Lot lot = Lot(ID, title, descr, startPrice, maxStavka, blicPrice, period);
 			lots.push_back(lot);
 		}
 		file.close();
@@ -49,7 +57,10 @@ private:
 	void initStavkaVector() {
 		ifstream file("stavki.txt", ios::in | ios::binary);
 		while (!(file.eof())) {
-			Stavka stavka = Stavka();
+			float _stavka;
+			int IDl, IDp;
+			file >> IDp >> IDl >> _stavka;
+			Stavka stavka = Stavka(IDp, IDl, _stavka);
 			stavki.push_back(stavka);
 		}
 		file.close();
@@ -62,7 +73,7 @@ public:
 			instance->initSellerVector();
 			instance->initPartVector();
 			instance->initLotVector();
-			instance->initStavkaVector();
+			//instance->initStavkaVector();
 		}
 		return instance;
 	}

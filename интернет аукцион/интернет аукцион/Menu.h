@@ -17,9 +17,9 @@ using std::string;
 #endif
 
 class Menu {
-	static string status;
+	//static string status;
 public:
-	static void setStatus(int st) {
+	/*static void setStatus(int st) {
 		if (st == 1) {
 			status = "seller";
 		}
@@ -27,7 +27,7 @@ public:
 			status = "participant";
 		}
 		else status = " ";
-	}
+	}*/
 	static int registration();
 	static int autorization();
 	static int menuSel();

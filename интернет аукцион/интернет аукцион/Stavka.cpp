@@ -17,10 +17,9 @@ void Stavka::menuStavka() {
 		Stavka::Stavka();
 	}
 	else if (vibor == 2) {
-		float stav;
 		cout << "Размер ставки: ";
-		cin >> stav;
-		Stavka::Stavka(stav);
+		cin >> stavka;
+		Stavka::Stavka(IDpart, IDlot, stavka);
 	}
 	system("pause");
 }

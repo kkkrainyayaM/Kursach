@@ -1,5 +1,6 @@
 #pragma once
 #include <string> 
+#include "IDGenerator.h"
 using namespace std;
 class Lot {
 	int ID;
@@ -12,6 +13,7 @@ class Lot {
 
 public:
 	Lot() {
+		ID = IDGenerator::getInstance()->getLotId();
 		title = " ";
 		descr = " ";
 		startPrice = 10;
@@ -19,7 +21,15 @@ public:
 		blicPrice = 100;
 		period = 5;
 	};
-	Lot(string t, string d, float s, float m, float b, int p, int id) {
+	Lot(string t, string d, float s, float m, float b, int p) {
+		ID = IDGenerator::getInstance()->getLotId();
+		title = t;
+		descr = d;
+		startPrice = s;
+		blicPrice = b;
+		period = p;
+	}
+	Lot( int id, string t, string d, float s, float m, float b, int p) {
 		ID = id;
 		title = t;
 		descr = d;
@@ -28,8 +38,8 @@ public:
 		period = p;
 	}
 	~Lot() {
-		delete &title;
-		delete &descr;
+		/*delete &title;
+		delete &descr;*/
 	};
 	//void setLot();
 	//void setID();

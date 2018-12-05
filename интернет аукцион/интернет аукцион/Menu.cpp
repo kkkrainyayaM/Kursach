@@ -8,10 +8,11 @@
 int Menu::registration() {
 	char menu2 = NULL;
 	int vozvr = 0;
-	cout << "РЕГИСТРАЦИЯ" << endl << "1.Регистрация как продавец.\n2.Регистрация как покупатель.\nEsc.Выход.\nВаш выбор: ";
-	menu2 = _getche();
 	while (menu2 != 27) {
-		if (menu2 = '1') {
+		cout << "РЕГИСТРАЦИЯ" << endl << "1.Регистрация как продавец.\n2.Регистрация как покупатель.\nEsc.Выход.\nВаш выбор: ";
+		menu2 = _getche();
+
+		if (menu2 == '1') {
 			Seller* seller = new Seller();
 			system("cls");
 			cout << "РЕГИСТРАЦИЯ" << endl;
@@ -23,18 +24,19 @@ int Menu::registration() {
 			vozvr = 1;
 			break;
 		}
-		else if (menu2 = '2') {
+		else if (menu2 == '2') {
 			Participant* participant = new Participant();
 			system("cls");
 			cout << "РЕГИСТРАЦИЯ" << endl;
 			participant->readName();
 			participant->setLogPas();
-			//DAO::getInstance().saveParticipant(*participant);
+			DAO* daoInstance = DAO::getInstance();
+			daoInstance->saveParticipant(*participant);
 			cout << "Регистрация прошла успешно!" << endl;
 			vozvr = 2;
 			break;
 		}
-		else if (menu2 = 27) {
+		else if (menu2 == 27) {
 			cout << "Всего Доброго!";
 			break;
 		}
@@ -45,49 +47,50 @@ int Menu::registration() {
 	}
 	return vozvr;
 }
-//int Menu::menuSel() {
-//	Seller s1;//добавить изменение, удаление
-//	Lot l1;
-//	int id1 = 0;
-//	char menu1 = NULL;
-//	cout << "Вы вошли как продавец." << endl;
-//	while (menu1 != 27) {
-//		cout << "1.Просмотр личной информации\n2.Добавление лота.\n3.Редактирование лота.\n4.Удаление лота.\n5.Просмотр всех лотов.\nESC.Выход.\n";
-//		cin >> menu1;
-//		switch (menu1) {
-//		case '1':
-//			s1.viewInf();
-//			system("pause");
-//			break;
-//		case '2':
-//			id1 = s1.retID();
-//			Seller::createLot(id1);
-//			system("pause");
-//			break;
-//		case '3':
-//			//Lot::redactLot();
-//			//дописать
-//			system("pause");
-//			break;
-//		case '4':
-//			//Lot ::deleteLot();
-//			//дописать
-//			system("pause");
-//			break;
-//		case '5':
-//			Lot::printLots();
-//			//дописать
-//			system("pause");
-//			break;
-//		case 27:
-//			cout << "Всего Доброго!" << endl;
-//			break;
-//		default: cout << "Выберите пункт меню корректно" << endl;
-//			system("pause");
-//			break;
-//		}
-//	}
-//}
+int Menu::menuSel() {
+	Seller s1;//добавить изменение, удаление
+	Lot l1;
+	int id1 = 0;
+	char menu1 = NULL;
+	cout << "Вы вошли как продавец." << endl;
+	while (menu1 != 27) {
+		cout << "1.Просмотр личной информации\n2.Добавление лота.\n3.Редактирование лота.\n4.Удаление лота.\n5.Просмотр всех лотов.\nESC.Выход.\n";
+		cin >> menu1;
+		switch (menu1) {
+		case '1':
+			//s1.viewInf();
+			system("pause");
+			break;
+		case '2':
+			//id1 = s1.retID();
+			//Seller::createLot(id1);
+			system("pause");
+			break;
+		case '3':
+			//Lot::redactLot();
+			//дописать
+			system("pause");
+			break;
+		case '4':
+			//Lot ::deleteLot();
+			//дописать
+			system("pause");
+			break;
+		case '5':
+			//Lot::printLots();
+			//дописать
+			system("pause");
+			break;
+		case 27:
+			cout << "Всего Доброго!" << endl;
+			break;
+		default: cout << "Выберите пункт меню корректно" << endl;
+			system("pause");
+			break;
+		}
+	}
+	return 0;
+}
 //int Menu::menuPart()
 //{
 //	Participant p1;
