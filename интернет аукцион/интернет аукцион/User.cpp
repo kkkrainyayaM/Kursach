@@ -41,7 +41,7 @@ void User::setPas() {
 			cin.clear();
 		}
 	}
-	Encryptor::codePassword(password);
+	Encryptor::codePassword(&password);
 }
 
 string User::getLogin() {
