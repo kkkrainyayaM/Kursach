@@ -124,6 +124,7 @@
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Encryptor.cpp" />
     <ClCompile Include="IDGenerator.cpp" />
     <ClCompile Include="Lot.cpp" />
     <ClCompile Include="Main.cpp" />

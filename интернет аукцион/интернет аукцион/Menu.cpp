@@ -19,7 +19,6 @@ int Menu::registration() {
 			seller->readName();
 			seller->setLog();
 			seller->setPas();
-			seller->shifrPas();
 			DAO* daoInstance = DAO::getInstance();
 			daoInstance->saveSeller(*seller);
 			cout << "\nРегистрация прошла успешно!" << endl;
@@ -33,7 +32,6 @@ int Menu::registration() {
 			participant->readName();
 			participant->setLog();
 			participant->setPas();
-			participant->shifrPas();
 			DAO* daoInstance = DAO::getInstance();
 			daoInstance->saveParticipant(*participant);
 			cout << "\nРегистрация прошла успешно!" << endl;

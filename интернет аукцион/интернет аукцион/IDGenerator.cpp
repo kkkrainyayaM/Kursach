@@ -10,10 +10,8 @@ private:
 	~IDGenerator();
 	void init();
 public:
-	
 	int getUserId();
 	int getLotId();
-	//int getIDLotByIDSel(int id);
 	static IDGenerator* getInstance();
 };
 
@@ -61,12 +59,3 @@ void IDGenerator::init() {
 	}
 	file.close();
 }
-
-//int IDGenerator:: getIDLotByIDSel(int id) {
-//	for (int i = 0; i < lotId; i++) {
-//		if (userId  == id) {//доделать
-//			return lotId;
-//		}
-//	}
-//	return NULL;
-//}

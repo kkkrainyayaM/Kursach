@@ -30,8 +30,9 @@ void User::setLog() {
 void User::setPas() {
 	int q = 0;
 	while (q == 0) {
-		cout << "¬ведите пароль: "; cin>>password;
-		if ((strlen(password) > 4) & (strlen(password) < 14)) {
+		cout << "¬ведите пароль: "; 
+		cin >> password;
+		if ((password.length() > 4) && (password.length() < 14)) {
 			q = 1;
 			break;
 		}
@@ -40,31 +41,13 @@ void User::setPas() {
 			cin.clear();
 		}
 	}
+	Encryptor::codePassword(password);
 }
 
-void User::shifrPas() {
-	int i = 0;
-	char alf[] = "abcedfghijklmnopqrstuvwxyz0123456789#!@$%^&*-+=";
-	for (unsigned int n = 0; n < strlen(password) + 1; n++)
-	{
-		for (i = 0; i < 47; i++)
-		{
-			if (password[n] == alf[i])
-			{
-				if (i >= 47)
-					password[n] = alf[i - 47];
-				else
-					password[n] = alf[i + 4];//сдвигаем вправо на 4
-				break;//принудительно выходим из цикла
-			}
-		}
-	}
-}
-
-char* User::getLogin() {
+string User::getLogin() {
 	return this->login;
 }
-char* User::getPassword() {
+string User::getPassword() {
 	return this->password;
 }
 

@@ -19,13 +19,10 @@ private:
 	void initSellerVector() {
 		ifstream file("seller.txt", ios::in | ios::binary);
 		while (!(file.eof())) {
-			if (file.peek() == EOF);
-			else {
+			if (file.peek() != EOF) {
 				int id, raiting;
-				string name;
-				char login[15], password[15];
+				string name, login, password;
 				file >> id >> name >> login >> password >> raiting;
-
 				Seller seller = Seller(id, name, login, password, raiting);
 				sellers.push_back(seller);
 			}
@@ -37,8 +34,7 @@ private:
 		ifstream file("participant.txt", ios::in | ios::binary);
 		while (!(file.eof())) {
 			int id;
-			string name;
-			char login[15], password[15];
+			string name, login, password;
 			file >> id >> name >> login >> password;
 			Participant participant = Participant(id, name, login, password);
 			participants.push_back(participant);
