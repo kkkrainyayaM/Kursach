@@ -8,12 +8,17 @@ public:
 	Seller() : User() {
 		raiting = 0;
 	};
-	Seller(string n, string l, string p, int r) : User(n, l, p) {
-		raiting = r;
-	};
+	//Seller(string n, string l, string p, int r) : User(n, l, p) {
+	//	raiting = r;
+	//};
 	Seller(int id, string n, string l, string p, int r) : User(id, n, l, p) {
 		raiting = r;
 	};
+
+	Seller(const Seller& seller) : User(seller) {
+		raiting = seller.raiting;
+	}
+
 	~Seller() {
 		User::~User();
 	}

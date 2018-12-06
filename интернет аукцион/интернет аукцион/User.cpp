@@ -27,6 +27,10 @@ void User::setLog() {
 	cin >> login;
 }
 
+void User::setID(int id) {
+	ID = id;
+}
+
 void User::setPas() {
 	int q = 0;
 	while (q == 0) {

@@ -22,21 +22,29 @@ private:
 
 public:
 	User() {
-		ID = IDGenerator::getInstance()->getUserId();
 		name = "";
 		login = "";
 		password = "";
 	};
-	User(string n, string l, string p) {
-		ID = IDGenerator::getInstance()->getUserId();
+	//User(string n, string l, string p) {
+	//	ID = IDGenerator::getInstance()->getUserId();
+	//	name = n;
+	//	login = l;
+	//	password = p;
+	//}
+
+	User(int id, string n, string l, string p) {
+		ID = id;
 		name = n;
 		login = l;
 		password = p;
 	}
 
-	User(int id, string n, string l, string p) {
-		ID = id;
-		User(n, l, p);
+	User(const User &user) {
+		ID = user.ID;
+		name = user.name;
+		login = user.login;
+		password = user.password;
 	}
 	virtual ~User() {
 		//delete &name;
@@ -47,6 +55,7 @@ public:
 	void setLog();
 	void setPas();
 	int getID();
+	void setID(int id); 
 	string getLogin();
 	string getPassword();
 };

@@ -4,9 +4,9 @@ class Participant : public User {
 public:
 	Participant() {
 	}
-	Participant(string n, string l, string p) : User(n, l, p) {
-	}
-	Participant(int ID, string n, string l, string p) : User(n, l, p) {
+	//Participant(string n, string l, string p) : User(n, l, p) {
+	//}
+	Participant(int id, string n, string l, string p) : User(id, n, l, p) {
 	}
 	~Participant() {
 		User::~User();

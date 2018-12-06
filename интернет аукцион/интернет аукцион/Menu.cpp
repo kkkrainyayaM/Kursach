@@ -12,9 +12,10 @@ int Menu::registration() {
 		cout << "ÐÅÃÈÑÒÐÀÖÈß" << endl << "1.Ðåãèñòðàöèÿ êàê ïðîäàâåö.\n2.Ðåãèñòðàöèÿ êàê ïîêóïàòåëü.\nEsc.Âûõîä.\nÂàø âûáîð: ";
 		cin >> menu2;
 		if (menu2 == '1') {
-			Seller* seller = new Seller();
 			system("cls");
 			cout << "ÐÅÃÈÑÒÐÀÖÈß" << endl;
+			Seller* seller = new Seller();
+			seller->setID(IDGenerator::getInstance()->getUserId());
 			seller->readName();
 			seller->setLog();
 			seller->setPas();
