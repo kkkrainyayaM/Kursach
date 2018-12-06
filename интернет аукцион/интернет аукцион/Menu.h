@@ -9,6 +9,7 @@
 #include <conio.h>
 #include <string>
 #include <algorithm>
+#include <limits>
 //const int NotUsed = system("color F0");
 using namespace std;
 using std::string;

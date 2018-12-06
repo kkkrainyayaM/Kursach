@@ -1,6 +1,6 @@
 #pragma once
 #include "Lot.h"
-#include <vector>
+#include "Vector.h"
 #include "User.h"
 #include "Participant.h"
 #include "Seller.h"
@@ -8,10 +8,10 @@
 
 class DAO {
 private:
-	vector<Seller> sellers = vector<Seller>();
-	vector<Participant> participants = vector<Participant>();
-	vector<Lot> lots = vector<Lot>();
-	vector<Stavka> stavki = vector<Stavka>();
+	Vector<Seller> sellers = Vector<Seller>();
+	Vector<Participant> participants = Vector<Participant>();
+	Vector<Lot> lots = Vector<Lot>();
+	Vector<Stavka> stavki = Vector<Stavka>();
 	static DAO *instance;
 	DAO() {
 	}
@@ -78,19 +78,19 @@ public:
 		return instance;
 	}
 
-	vector<Seller>& getAllSellers() {
+	Vector<Seller>& getAllSellers() {
 		return sellers;
 	}
 
-	vector<Participant>& getAllPart() {
+	Vector<Participant>& getAllPart() {
 		return participants;
 	}
 
-	vector<Lot>& getAllLots() {
+	Vector<Lot>& getAllLots() {
 		return lots;
 	}
 
-	vector<Stavka>& getAllStavki() {
+	Vector<Stavka>& getAllStavki() {
 		return stavki;
 	}
 

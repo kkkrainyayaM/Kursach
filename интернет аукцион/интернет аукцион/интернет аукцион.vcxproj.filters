@@ -42,6 +42,12 @@
     <ClInclude Include="DAO.cpp">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Iterator.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">

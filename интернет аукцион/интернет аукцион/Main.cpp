@@ -19,7 +19,8 @@ int main() {
 			<< setw(65) << "1.Регистрация" << endl
 			<< setw(56) << "2.Вход" << endl
 			<< setw(60) << "Esc.Выход" << endl;
-		menu1 = _getche();
+
+		cin >> menu1;
 		switch (menu1) {
 		case '1':
 			system("cls");

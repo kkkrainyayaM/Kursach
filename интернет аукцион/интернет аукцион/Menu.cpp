@@ -10,7 +10,7 @@ int Menu::registration() {
 	int vozvr = 0;
 	while (menu2 != 27) {
 		cout << "РЕГИСТРАЦИЯ" << endl << "1.Регистрация как продавец.\n2.Регистрация как покупатель.\nEsc.Выход.\nВаш выбор: ";
-		menu2 = _getche();
+		cin >> menu2;
 
 		if (menu2 == '1') {
 			Seller* seller = new Seller();

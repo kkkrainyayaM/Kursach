@@ -112,6 +112,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="DAO.cpp" />
+    <ClInclude Include="Iterator.h" />
     <ClInclude Include="Lot.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Participant.h" />
@@ -120,6 +121,7 @@
     <ClInclude Include="seller.txt" />
     <ClInclude Include="Stavka.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="Vector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IDGenerator.cpp" />
