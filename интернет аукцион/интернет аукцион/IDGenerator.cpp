@@ -7,12 +7,14 @@ private:
 	int userId;
 	int lotId;
 	IDGenerator();
-	~IDGenerator();
+	~IDGenerator() {};
 	void init();
-	
 public:
+	void saveIDUser();
+	void saveIDLot();
 	int getUserId();
 	int getLotId();
+	int getIDLotByIDSel(int id);
 	static IDGenerator* getInstance();
 };
 
@@ -27,11 +29,19 @@ IDGenerator::IDGenerator()
 	init();
 }
 
-IDGenerator::~IDGenerator()
+void IDGenerator::saveIDUser()
 {
 	ofstream file("ID.txt", ios::in | ios::binary | ios::trunc);
 	if (file.is_open()) {
-		file << userId << '\n' << lotId << '\n';
+		file <<userId << ' ';
+	}
+	file.close();
+}
+void IDGenerator::saveIDLot()
+{
+	ofstream file("ID.txt", ios::in | ios::binary | ios::trunc);
+	if (file.is_open()) {
+		file << lotId << '\n';
 	}
 	file.close();
 }
@@ -52,3 +62,12 @@ void IDGenerator::init() {
 	}
 	file.close();
 }
+
+//int IDGenerator:: getIDLotByIDSel(int id) {
+//	for (int i = 0; i < lotId; i++) {
+//		if (userId  == id) {//доделать
+//			return lotId;
+//		}
+//	}
+//	return NULL;
+//}

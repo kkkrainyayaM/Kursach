@@ -15,9 +15,9 @@ public:
 		raiting = r;
 	};
 	~Seller() {
-		//вызвать деструктор 
+		User::~User();
 	}
-	//void viewInf();
+	//static void viewInf();
 	//static void createLot(int idSel);
 	int getRaiting();
 
