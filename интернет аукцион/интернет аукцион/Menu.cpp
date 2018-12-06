@@ -11,7 +11,6 @@ int Menu::registration() {
 	while (menu2 != 27) {
 		cout << "РЕГИСТРАЦИЯ" << endl << "1.Регистрация как продавец.\n2.Регистрация как покупатель.\nEsc.Выход.\nВаш выбор: ";
 		cin >> menu2;
-
 		if (menu2 == '1') {
 			Seller* seller = new Seller();
 			system("cls");

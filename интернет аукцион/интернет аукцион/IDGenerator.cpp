@@ -7,6 +7,7 @@ private:
 	int userId;
 	int lotId;
 	IDGenerator();
+//<<<<<<< Updated upstream
 	~IDGenerator();
 	void init();
 public:

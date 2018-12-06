@@ -9,11 +9,11 @@ int main() {
 	//auto time = std::time(nullptr);
 	//cout.imbue(std::locale("ru_RU.utf8"));
 	//cout << std::put_time(std::gmtime(&time), "%c"); äîáàâèòü âðåìÿ
-	char menu1 = NULL;
+	char menu1 = '0';
 	int vozvr;
 	cout << endl << endl << setw(65) << "ÈÍÒÅÐÍÅÒ-ÀÓÊÖÈÎÍ" << endl << endl;
 	cout << "-----------------------------------Äîáðî Ïîæàëîâàòü!----------------------------------\n" << endl;
-	while (menu1 != 0) {
+	while (menu1 != 27) {
 		
 		cout << setw(66) << "ÄÎÁÐÎ ÏÎÆÀËÎÂÀÒÜ!" << endl;
 		cout << setw(63) << "Âûáåðèòå ïóíêò ìåíþ" << endl
@@ -29,8 +29,8 @@ int main() {
 			switch (vozvr) {
 			case 1:
 				//Menu::menuSel();
-				//system("pause");
-				//break;
+				system("pause");
+				break;
 			case 2:
 				//Menu::menuPart();
 				system("pause");
@@ -64,7 +64,7 @@ int main() {
 			}
 			break;
 		}*/
-		case '0':
+		case 27:
 			IDGenerator::getInstance()->~IDGenerator();
 			cout << "Âñåãî Äîáðîãî!";
 			break;
