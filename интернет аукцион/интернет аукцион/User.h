@@ -29,13 +29,11 @@ public:
 	User() {
 		name = " ";
 		ID = IDGenerator::getInstance()->getUserId();
-		//IDGenerator::getInstance()->saveIDUser(); как вызвать эту функцию?
 		strcpy_s(login, 15, " ");
 		strcpy_s(password, 15, " ");
 	};
 	User(string n, char* l, char* p) {
 		ID = IDGenerator::getInstance()->getUserId();
-		IDGenerator::getInstance()->saveIDUser();
 		name = n;
 		strcpy_s(login, 15, l);
 		strcpy_s(password, 15, p);
@@ -53,7 +51,8 @@ public:
 	void setName(string name);
 	void readName();
 	string getName();
-	void setLogPas();
+	void setLog();
+	void setPas();
 	int getID();
 	void shifrPas();
 	char* getLogin();

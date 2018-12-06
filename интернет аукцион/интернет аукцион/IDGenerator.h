@@ -8,12 +8,10 @@ private:
 	int userId;
 	int lotId;
 	IDGenerator();
-	~IDGenerator() {};
 	static void init();
 	static IDGenerator* instance;
 public:
-	void saveIDUser();
-	void saveIDLot();
+	~IDGenerator() {};
 	int getUserId();
 	int getLotId();
 	static IDGenerator* getInstance();

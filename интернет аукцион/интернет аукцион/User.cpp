@@ -6,11 +6,12 @@ void User::setName(string name) {
 }
 
 void User::readName() {
-	std::string name;
+	//std::string name;
 	cin.clear();
 	cout << "¬аше »м€: ";
-	getline(cin, name);
-	setName(name);
+	cin >> name;
+	//getline(cin, name);
+	//setName(name);
 }
 
 string User::getName() {
@@ -20,12 +21,16 @@ string User::getName() {
 int User::getID() {
 	return ID;
 }
-void User::setLogPas() {
+void User::setLog() {
+	cin.clear();
 	cout << "¬ведите логин: ";
-	cin.getline(login, 15);
+	cin >> login;
+}
+
+void User::setPas() {
 	int q = 0;
 	while (q == 0) {
-		cout << "¬ведите пароль: "; cin.getline(password, 15);
+		cout << "¬ведите пароль: "; cin>>password;
 		if ((strlen(password) > 4) & (strlen(password) < 14)) {
 			q = 1;
 			break;
@@ -35,8 +40,8 @@ void User::setLogPas() {
 			cin.clear();
 		}
 	}
-	shifrPas();
 }
+
 void User::shifrPas() {
 	int i = 0;
 	char alf[] = "abcedfghijklmnopqrstuvwxyz0123456789#!@$%^&*-+=";

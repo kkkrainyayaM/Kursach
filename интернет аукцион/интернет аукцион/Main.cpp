@@ -1,6 +1,7 @@
 #include "User.h"
 #include "Lot.h"
 #include "Menu.h"
+#include "IDGenerator.h"
 
 int main() {
 	SetConsoleCP(1251);
@@ -12,14 +13,13 @@ int main() {
 	int vozvr;
 	cout << endl << endl << setw(65) << "ИНТЕРНЕТ-АУКЦИОН" << endl << endl;
 	cout << "-----------------------------------Добро Пожаловать!----------------------------------\n" << endl;
-	while (menu1 != 27) {
+	while (menu1 != 0) {
 		
 		cout << setw(66) << "ДОБРО ПОЖАЛОВАТЬ!" << endl;
 		cout << setw(63) << "Выберите пункт меню" << endl
 			<< setw(65) << "1.Регистрация" << endl
 			<< setw(56) << "2.Вход" << endl
 			<< setw(60) << "Esc.Выход" << endl;
-
 		cin >> menu1;
 		switch (menu1) {
 		case '1':
@@ -28,9 +28,9 @@ int main() {
 			//Menu::setStatus(vozvr);
 			switch (vozvr) {
 			case 1:
-				Menu::menuSel();
-				system("pause");
-				break;
+				//Menu::menuSel();
+				//system("pause");
+				//break;
 			case 2:
 				//Menu::menuPart();
 				system("pause");
@@ -64,8 +64,10 @@ int main() {
 			}
 			break;
 		}*/
-		case 27:
+		case '0':
+			IDGenerator::getInstance()->~IDGenerator();
 			cout << "Всего Доброго!";
+			break;
 			break;
 		default:
 			cout << "Выберите пункт меню корректно";

@@ -17,7 +17,9 @@ int Menu::registration() {
 			system("cls");
 			cout << "РЕГИСТРАЦИЯ" << endl;
 			seller->readName();
-			seller->setLogPas();
+			seller->setLog();
+			seller->setPas();
+			seller->shifrPas();
 			DAO* daoInstance = DAO::getInstance();
 			daoInstance->saveSeller(*seller);
 			cout << "\nРегистрация прошла успешно!" << endl;
@@ -29,7 +31,9 @@ int Menu::registration() {
 			system("cls");
 			cout << "РЕГИСТРАЦИЯ" << endl;
 			participant->readName();
-			participant->setLogPas();
+			participant->setLog();
+			participant->setPas();
+			participant->shifrPas();
 			DAO* daoInstance = DAO::getInstance();
 			daoInstance->saveParticipant(*participant);
 			cout << "\nРегистрация прошла успешно!" << endl;
@@ -47,49 +51,49 @@ int Menu::registration() {
 	}
 	return vozvr;
 }
-int Menu::menuSel() {
-	int id1 = 0;
-	char menu1 = NULL;
-	system("cls");
-	cout << "Вы вошли как продавец." << endl;
-	while (menu1 != 27) {
-		cout << "1.Просмотр личной информации\n2.Добавление лота.\n3.Редактирование лота.\n4.Удаление лота.\n5.Просмотр всех лотов.\nESC.Выход.\n";
-		cin >> menu1;
-		//switch (menu1) {
-		//case '1':
-		//	Seller::viewInf();
-		//	system("pause");
-		//	break;
-		//case '2':
-		//	//id1 = s1.retID();
-		//	//Seller::createLot(id1);
-		//	system("pause");
-		//	break;
-		//case '3':
-		//	//Lot::redactLot();
-		//	//дописать
-		//	system("pause");
-		//	break;
-		//case '4':
-		//	//Lot ::deleteLot();
-		//	//дописать
-		//	system("pause");
-		//	break;
-		//case '5':
-		//	//Lot::printLots();
-		//	//дописать
-		//	system("pause");
-		//	break;
-		//case 27:
-		//	cout << "Всего Доброго!" << endl;
-		//	break;
-		//default: cout << "Выберите пункт меню корректно" << endl;
-		//	system("pause");
-		//	break;
-		//}
-	}
-	return 0;
-}
+//int Menu::menuSel() {
+//	int id1 = 0;
+//	char menu1 = NULL;
+//	system("cls");
+//	cout << "Вы вошли как продавец." << endl;
+//	while (menu1 != 27) {
+//		cout << "1.Просмотр личной информации\n2.Добавление лота.\n3.Редактирование лота.\n4.Удаление лота.\n5.Просмотр всех лотов.\nESC.Выход.\n";
+//		cin >> menu1;
+//		switch (menu1) {
+//		//case '1':
+//		//	Seller::viewInf();
+//		//	system("pause");
+//		//	break;
+//		//case '2':
+//		//	//id1 = s1.retID();
+//		//	//Seller::createLot(id1);
+//		//	system("pause");
+//		//	break;
+//		//case '3':
+//		//	//Lot::redactLot();
+//		//	//дописать
+//		//	system("pause");
+//		//	break;
+//		//case '4':
+//		//	//Lot ::deleteLot();
+//		//	//дописать
+//		//	system("pause");
+//		//	break;
+//		//case '5':
+//		//	//Lot::printLots();
+//		//	//дописать
+//		//	system("pause");
+//		//	break;
+//		case 27:
+//			cout << "Всего Доброго!" << endl;
+//			break;
+//		default: cout << "Выберите пункт меню корректно" << endl;
+//			system("pause");
+//			break;
+//		}
+//	}
+//	return 0;
+//}
 //int Menu::menuPart()
 //{
 //	Participant p1;

@@ -7,14 +7,13 @@ private:
 	int userId;
 	int lotId;
 	IDGenerator();
-	~IDGenerator() {};
+	~IDGenerator();
 	void init();
 public:
-	void saveIDUser();
-	void saveIDLot();
+	
 	int getUserId();
 	int getLotId();
-	int getIDLotByIDSel(int id);
+	//int getIDLotByIDSel(int id);
 	static IDGenerator* getInstance();
 };
 
@@ -29,21 +28,13 @@ IDGenerator::IDGenerator()
 	init();
 }
 
-void IDGenerator::saveIDUser()
+IDGenerator::~IDGenerator()
 {
 	ofstream file("ID.txt", ios::in | ios::binary | ios::trunc);
 	if (file.is_open()) {
-		file <<userId << ' ';
+		file << userId << ' ' << lotId<< '\n';
+		file.close();
 	}
-	file.close();
-}
-void IDGenerator::saveIDLot()
-{
-	ofstream file("ID.txt", ios::in | ios::binary | ios::trunc);
-	if (file.is_open()) {
-		file << lotId << '\n';
-	}
-	file.close();
 }
 
 int IDGenerator::getUserId() {
@@ -57,8 +48,16 @@ int IDGenerator::getLotId() {
 void IDGenerator::init() {
 	ifstream file("ID.txt", ios::in | ios::binary);
 	if (file.is_open()) {
-		file >> this->userId;
-		file >> this->lotId;
+		while (!(file.eof())) {
+			if (file.peek() == EOF) {
+				this->userId = 0;
+				this->lotId = 99;
+			}
+			else {
+				file >> this->userId;
+				file >> this->lotId;
+			}
+		}
 	}
 	file.close();
 }
