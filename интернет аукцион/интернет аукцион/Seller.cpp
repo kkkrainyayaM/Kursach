@@ -1,27 +1,27 @@
 #include "Seller.h"
-
-//void Seller::viewInf() {
+//
+//void Seller::printInf(User *user) {
+//	user->toString();
+//    cout << "Вы вошли в личный аккаунт." << endl;
 //	char w = NULL;
-//	cout << name << ", вы вошли в личный аккаунт." << endl;
-//	cout << "Ваш логин: " << login << endl;
 //	cout.fill('*');
-//	cout << "Ваш рейтинг: " << setw(raiting) << "(" << raiting << ")" << endl;
+//	//cout << "Ваш рейтинг: " << setw(user->getRaiting()) << " (" << user->getRaiting() << ")" << endl;
 //
-//	DAO::getIDLotByIDSel(ID);//
-//	cout << "Ваши товары:" << endl;
+//	//DAO::getIDLotByIDSel(ID);
+//	//cout << "Ваши товары:" << endl;
 //
-//	cout << "Название: " << t[r] << endl << "Описание: " << d[r] << endl
-//		<< "Стартовая цена: " << s[r] << endl << "Максимальная ставка: " << m[r] << endl
-//		<< "Блиц-цена: " << b[r] << endl;
+//	//Lot::cout << "Название: " << title << endl << "Описание: " << d[r] << endl
+//	//	<< "Стартовая цена: " << s[r] << endl << "Максимальная ставка: " << m[r] << endl
+//	//	<< "Блиц-цена: " << b[r] << endl;
 //
-//	cout << "Добавьте лот!" << endl << "Добавить лот?(1 - да/ 2 - нет)";
-//	int v;
-//	cin >> v;
-//	//if (v == 1) Seller::createLot();
-//			cout << "Для выхода нажмите Esc.";
-//			cin >> w;
-//			if (w == 27)break;
-//		}
+//	//cout << "Добавьте лот!" << endl << "Добавить лот?(1 - да/ 2 - нет)";
+//	//int v;
+//	//cin >> v;
+//	////if (v == 1) Seller::createLot();
+//	//		cout << "Для выхода нажмите Esc.";
+//	//		cin >> w;
+//	//		if (w == 27)break;
+//	//	}
 //}
 //void Seller::createLot(int idSel) {
 //	Lot l;
@@ -47,6 +47,12 @@
 
 int Seller::getRaiting() {
 	return this->raiting;
+}
+
+void Seller::toString() {
+	cout << "Имя: " << getName() << endl
+		<< "Логин: " << getLogin() << endl
+		<< "Пароль: " << getPassword() << endl;
 }
 
 ostream& operator<< (ostream& s, Seller& seller) {

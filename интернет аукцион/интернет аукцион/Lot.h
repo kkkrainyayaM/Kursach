@@ -12,23 +12,7 @@ class Lot {
 	int period;
 
 public:
-	Lot() {
-		ID = IDGenerator::getInstance()->getLotId();
-		title = " ";
-		descr = " ";
-		startPrice = 10;
-		maxStavka = 10;
-		blicPrice = 100;
-		period = 5;
-	};
-	Lot(string t, string d, float s, float m, float b, int p) {
-		ID = IDGenerator::getInstance()->getLotId();
-		title = t;
-		descr = d;
-		startPrice = s;
-		blicPrice = b;
-		period = p;
-	}
+	Lot() {};
 	Lot( int id, string t, string d, float s, float m, float b, int p) {
 		ID = id;
 		title = t;
@@ -41,8 +25,7 @@ public:
 		/*delete &title;
 		delete &descr;*/
 	};
-	//void setLot();
-	//void setID();
+	void setID(int id);
 	int getID();
 	string getTitle();
 	string getDescr();

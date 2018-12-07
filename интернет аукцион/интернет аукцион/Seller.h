@@ -8,9 +8,6 @@ public:
 	Seller() : User() {
 		raiting = 0;
 	};
-	//Seller(string n, string l, string p, int r) : User(n, l, p) {
-	//	raiting = r;
-	//};
 	Seller(int id, string n, string l, string p, int r) : User(id, n, l, p, Role::SELLER) {
 		raiting = r;
 	};
@@ -22,9 +19,13 @@ public:
 	~Seller() {
 		User::~User();
 	}
-	//static void viewInf();
-	//static void createLot(int idSel);
 	int getRaiting();
+	void toString();
+
+	void printInfo() {
+		cout << "Имя: " << getName() << endl;
+		cout << "Рейтинг: " << getRaiting() << endl;
+	}
 
 	friend ostream& operator<< (ostream& s, Seller& seller);
 };

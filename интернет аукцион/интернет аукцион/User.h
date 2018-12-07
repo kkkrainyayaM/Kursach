@@ -50,6 +50,7 @@ public:
 	void setName(string name);
 	void readName();
 	string getName();
+	void toString();
 	void setLog();
 	void setPas();
 	void setRole(Role role);

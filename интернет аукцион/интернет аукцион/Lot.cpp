@@ -214,3 +214,7 @@ float Lot::getStartPrice() {
 int Lot::getPeriod() {
 	return this->period;
 }
+
+void Lot::setID(int id) {
+	this->ID = id;
+}

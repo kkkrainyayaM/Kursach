@@ -1,17 +1,19 @@
 #include "AuthService.h"
 #include "DAO.cpp"
 
-	AuthService AuthService::getAuthInstance() {
-		static AuthService authInstance;
-		return authInstance;
+	AuthService* AuthService::getAuthInstance() {
+		if (instance == NULL) {
+			instance = new AuthService();
+		}
+		return instance;
 	}
 
-	void AuthService::setCurrentUser(User user) {
-		currentUser = user;
+	void AuthService::setCurrentUser(User& user) {
+		currentUser = user; //странно почему не вызвался конструктор копирования, нужно погуглить
 	}
 
-	User AuthService::getCurrentUser() {
-		return currentUser;
+	User& AuthService::getCurrentUser() {
+		return this->currentUser;
 	}
     
 	void AuthService::auth() {
@@ -19,7 +21,7 @@
 		User* user = nullptr;
 		while (user == nullptr) {
 			system("cls");
-			cout << "Login: ";
+			cout << "Логин: ";
 			cin >> login;
 			user = DAO::getInstance()->getUserByLogin(login);
 			if (user == nullptr) {
@@ -27,12 +29,13 @@
 				_getch();
 			}
 		}
-		cout << "Password: ";
+		cout << "Пароль: ";
 		cin >> password;
 		while (!Encryptor::isEqual(password, user->getPassword())) {
 			cout << "Неверный пароль!";
-			cout << "Password: ";
+			cout << "Пароль: ";
 			cin >> password;
 		}
-		currentUser = *user;
+		currentUser = User(*user);
 	}
+	AuthService* AuthService::instance = 0;

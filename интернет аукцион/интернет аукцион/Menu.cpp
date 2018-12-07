@@ -18,6 +18,8 @@ int Menu::registration() {
 			seller->setPas();
 			DAO* daoInstance = DAO::getInstance();
 			daoInstance->saveSeller(*seller);
+			AuthService::getAuthInstance()->setCurrentUser(*seller);
+			User user = AuthService::getAuthInstance()->getCurrentUser();
 			cout << "\nРегистрация прошла успешно!" << endl;
 			vozvr = 1;
 			break;
@@ -26,6 +28,7 @@ int Menu::registration() {
 			Participant* participant = new Participant();
 			system("cls");
 			cout << "РЕГИСТРАЦИЯ" << endl;
+			participant->setID(IDGenerator::getInstance()->getUserId());
 			participant->readName();
 			participant->setLog();
 			participant->setPas();
@@ -46,49 +49,62 @@ int Menu::registration() {
 	}
 	return vozvr;
 }
-//int Menu::menuSel() {
-//	int id1 = 0;
-//	char menu1 = NULL;
-//	system("cls");
-//	cout << "Вы вошли как продавец." << endl;
-//	while (menu1 != 27) {
-//		cout << "1.Просмотр личной информации\n2.Добавление лота.\n3.Редактирование лота.\n4.Удаление лота.\n5.Просмотр всех лотов.\nESC.Выход.\n";
-//		cin >> menu1;
-//		switch (menu1) {
-//		//case '1':
-//		//	Seller::viewInf();
-//		//	system("pause");
-//		//	break;
-//		//case '2':
-//		//	//id1 = s1.retID();
-//		//	//Seller::createLot(id1);
-//		//	system("pause");
-//		//	break;
-//		//case '3':
-//		//	//Lot::redactLot();
-//		//	//дописать
-//		//	system("pause");
-//		//	break;
-//		//case '4':
-//		//	//Lot ::deleteLot();
-//		//	//дописать
-//		//	system("pause");
-//		//	break;
-//		//case '5':
-//		//	//Lot::printLots();
-//		//	//дописать
-//		//	system("pause");
-//		//	break;
-//		case 27:
-//			cout << "Всего Доброго!" << endl;
-//			break;
-//		default: cout << "Выберите пункт меню корректно" << endl;
-//			system("pause");
-//			break;
-//		}
-//	}
-//	return 0;
-//}
+int Menu::menuSel() {
+	//int id1 = 0;
+	char menu1 = NULL;
+	system("cls");
+	cout << "Вы вошли как продавец." << endl;
+	/*int id = 4;
+	User* user;
+	user = DAO::getInstance()->getSellerById(id);*/
+
+	while (menu1 != 27) {
+		cout << "1.Кабинет пользователя.\n2.Добавление лота.\n3.Редактирование лота.\n4.Удаление лота.\n5.Просмотр всех лотов.\nESC.Выход.\n";
+		menu1 = _getche();
+		switch (menu1) {
+		case '1': {
+			system("cls");
+			cout << "Кабинет пользователя."<<endl;
+			//Seller::printInf(user);
+			User user = AuthService::getAuthInstance()->getCurrentUser();
+			user.toString();
+			//если будет налл нужнжно отсюда выйти (занчит не залогинился). Эта функция должна вызваться после успешной авторизации пользователя.
+			//printfInf будет вызываться на объекте когда захочешь получить .... потом объясню, с этим разберись
+			// зайди сюда на дебаг
+			// я охуеваю, что за хуйння
+			system("pause");
+			break;
+		}
+				  //case '2':
+				  //	//id1 = s1.retID();
+				  //	//Seller::createLot(id1);
+				  //	system("pause");
+				  //	break;
+				  //case '3':
+				  //	//Lot::redactLot();
+				  //	//дописать
+				  //	system("pause");
+				  //	break;
+				  //case '4':
+				  //	//Lot ::deleteLot();
+				  //	//дописать
+				  //	system("pause");
+				  //	break;
+				  //case '5':
+				  //	//Lot::printLots();
+				  //	//дописать
+				  //	system("pause");
+				  //	break;
+		case 27:
+			cout << "Всего Доброго!" << endl;
+			break;
+		default: cout << "Выберите пункт меню корректно" << endl;
+			system("pause");
+			break;
+		}
+	}
+	return 0;
+}
 //int Menu::menuPart()
 //{
 //	Participant p1;
@@ -137,7 +153,8 @@ int Menu::registration() {
 //	}
 //}
 int Menu::autorization() {
-	AuthService::getAuthInstance().auth();
+
+	AuthService::getAuthInstance()->auth();
 	return 0;
 }
 

@@ -55,6 +55,12 @@ void User::setRole(Role role) {
 	this->role = role;
 }
 
+void User::toString() {
+	cout << "Имя: " << name << endl
+		<< "Логин: " << login << endl
+		<< "Пароль: " << password << endl;
+}
+
 Role User::getRole() {
 	return role;
 }

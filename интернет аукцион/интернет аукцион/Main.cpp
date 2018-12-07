@@ -7,18 +7,18 @@ int main() {
 	//auto time = std::time(nullptr);
 	//cout.imbue(std::locale("ru_RU.utf8"));
 	//cout << std::put_time(std::gmtime(&time), "%c"); äîáàâèòü âðåìÿ
-	char menu1 = '0';
+	char menu1 = NULL;
 	int vozvr;
-	cout << endl << endl << setw(65) << "ÈÍÒÅÐÍÅÒ-ÀÓÊÖÈÎÍ" << endl << endl;
-	cout << "-----------------------------------Äîáðî Ïîæàëîâàòü!----------------------------------\n" << endl;
+	cout << endl << endl << setw(65) << "ÈÍÒÅÐÍÅÒ-ÀÓÊÖÈÎÍ" << endl
+		<< setw(65) << "----------------" << endl;
+	cout << setw(66) << "ÄÎÁÐÎ ÏÎÆÀËÎÂÀÒÜ!" << endl<< endl;
 	while (menu1 != 27) {
-		
-		cout << setw(66) << "ÄÎÁÐÎ ÏÎÆÀËÎÂÀÒÜ!" << endl;
-		cout << setw(63) << "Âûáåðèòå ïóíêò ìåíþ" << endl
+		cout << setw(67) << "Âûáåðèòå ïóíêò ìåíþ:" << endl
 			<< setw(65) << "1.Ðåãèñòðàöèÿ" << endl
-			<< setw(56) << "2.Âõîä" << endl
-			<< setw(60) << "0.Âûõîä" << endl;
-		cin >> menu1;
+			<< setw(58) << "2.Âõîä" << endl
+			<< setw(59) << "ESC.Âûõîä" << endl << endl
+			<< setw(61) << "Âàø âûáîð: ";
+		menu1 = _getche();
 		switch (menu1) {
 		case '1':
 			system("cls");
@@ -26,7 +26,7 @@ int main() {
 			//Menu::setStatus(vozvr);
 			switch (vozvr) {
 			case 1:
-				//Menu::menuSel();
+				Menu::menuSel();
 				system("pause");
 				break;
 			case 2:
@@ -43,11 +43,25 @@ int main() {
 		case '2':
 		{
 			system("cls");
-			Menu::autorization();
-			system("pause");
+			vozvr = Menu::autorization();
+			switch (vozvr) {
+			case 1:
+				Menu::menuSel();
+				system("pause");
+				break;
+			case 2:
+				//Menu::menuPart();
+				system("pause");
+				break;
+			default:
+				cout << "\nÏðîèçîøëà Îøèáêà!";
+				system("pause");
+				break;
+			}
 			break;
+			
 		}
-		case '0':
+		case 27:
 			IDGenerator::getInstance()->~IDGenerator();
 			cout << "Âñåãî Äîáðîãî!";
 			break;
