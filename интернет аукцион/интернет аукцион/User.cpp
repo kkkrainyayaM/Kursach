@@ -6,12 +6,9 @@ void User::setName(string name) {
 }
 
 void User::readName() {
-	//std::string name;
 	cin.clear();
 	cout << "Ваше Имя: ";
 	cin >> name;
-	//getline(cin, name);
-	//setName(name);
 }
 
 string User::getName() {
@@ -55,7 +52,10 @@ string User::getPassword() {
 	return this->password;
 }
 
+void User::setRole(Role role) {
+	this->role = role;
+}
 
-
-
-
+Role User::getRole() {
+	return role;
+}

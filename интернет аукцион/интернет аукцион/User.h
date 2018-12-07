@@ -5,6 +5,7 @@
 #include <iomanip>
 #include "IDGenerator.h"
 #include "Encryptor.cpp"
+#include "Role.h"
 using namespace std;
 using std::string;
 #if defined(max)
@@ -19,6 +20,7 @@ private:
 	string name;
 	string login;
 	string password;
+	Role role;
 
 public:
 	User() {
@@ -26,18 +28,13 @@ public:
 		login = "";
 		password = "";
 	};
-	//User(string n, string l, string p) {
-	//	ID = IDGenerator::getInstance()->getUserId();
-	//	name = n;
-	//	login = l;
-	//	password = p;
-	//}
 
-	User(int id, string n, string l, string p) {
+	User(int id, string n, string l, string p, Role role) {
 		ID = id;
 		name = n;
 		login = l;
 		password = p;
+		this->role = role;
 	}
 
 	User(const User &user) {
@@ -45,6 +42,7 @@ public:
 		name = user.name;
 		login = user.login;
 		password = user.password;
+		role = user.role;
 	}
 	virtual ~User() {
 		//delete &name;
@@ -54,10 +52,13 @@ public:
 	string getName();
 	void setLog();
 	void setPas();
+	void setRole(Role role);
 	int getID();
 	void setID(int id); 
 	string getLogin();
 	string getPassword();
+	Role getRole();
+
 };
 
 

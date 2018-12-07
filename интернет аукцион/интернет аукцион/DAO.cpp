@@ -22,7 +22,7 @@ private:
 			if (file.peek() != EOF) {
 				int id, raiting;
 				string name, login, password;
-				file >> id >> name >> login >> password >> raiting;
+				file >> id  >> login >> password >> name >> raiting;
 				Seller seller = Seller(id, name, login, password, raiting);
 				sellers.push_back(seller);
 			}

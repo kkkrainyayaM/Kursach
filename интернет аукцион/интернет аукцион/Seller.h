@@ -11,7 +11,7 @@ public:
 	//Seller(string n, string l, string p, int r) : User(n, l, p) {
 	//	raiting = r;
 	//};
-	Seller(int id, string n, string l, string p, int r) : User(id, n, l, p) {
+	Seller(int id, string n, string l, string p, int r) : User(id, n, l, p, Role::SELLER) {
 		raiting = r;
 	};
 

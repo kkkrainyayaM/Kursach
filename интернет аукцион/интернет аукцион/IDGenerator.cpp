@@ -1,20 +1,6 @@
+#include "IDGenerator.h"
 #include <fstream>
 using namespace std;
-
-class IDGenerator
-{
-private:
-	int userId;
-	int lotId;
-	IDGenerator();
-//<<<<<<< Updated upstream
-	~IDGenerator();
-	void init();
-public:
-	int getUserId();
-	int getLotId();
-	static IDGenerator* getInstance();
-};
 
 
 IDGenerator* IDGenerator::getInstance() {
@@ -48,14 +34,8 @@ void IDGenerator::init() {
 	ifstream file("ID.txt", ios::in | ios::binary);
 	if (file.is_open()) {
 		while (!(file.eof())) {
-			if (file.peek() == EOF) {
-				this->userId = 0;
-				this->lotId = 99;
-			}
-			else {
 				file >> this->userId;
 				file >> this->lotId;
-			}
 		}
 	}
 	file.close();

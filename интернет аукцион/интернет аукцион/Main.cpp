@@ -19,7 +19,7 @@ int main() {
 		cout << setw(63) << "Выберите пункт меню" << endl
 			<< setw(65) << "1.Регистрация" << endl
 			<< setw(56) << "2.Вход" << endl
-			<< setw(60) << "Esc.Выход" << endl;
+			<< setw(60) << "0.Выход" << endl;
 		cin >> menu1;
 		switch (menu1) {
 		case '1':
@@ -64,10 +64,9 @@ int main() {
 			}
 			break;
 		}*/
-		case 27:
+		case '0':
 			IDGenerator::getInstance()->~IDGenerator();
 			cout << "Всего Доброго!";
-			break;
 			break;
 		default:
 			cout << "Выберите пункт меню корректно";
