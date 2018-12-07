@@ -1,9 +1,6 @@
-#include "User.h"
-#include "Seller.h"
-#include "Participant.h"
-#include "Lot.h"
+#pragma once
 #include "Menu.h"
-#include "DAO.cpp"
+
 
 int Menu::registration() {
 	char menu2 = NULL;
@@ -139,58 +136,11 @@ int Menu::registration() {
 //		}
 //	}
 //}
-//int Menu::autorization() {
-//	char _login[15], _password[15], log[15][20], pas[15][20];
-//	int id[20], q = 0;
-//	List<User>u1;
-//	const char ch = '\n';
-//	ifstream file("log_pas.txt", ios::in | ios::binary);
-//	if (!file.is_open()) cout << "Файл не может быть открыт!\n";
-//	while (q == 0) {
-//		cout << "Логин: ";
-//		cin >> _login;
-//		cout << "Пароль: ";
-//		cin >> _password;
-//		int i = 0, n = 0;
-//		char alf[] = "abcedfghijklmnopqrstuvwxyz0123456789#!@$%^&*-+=";
-//		for (n = 0; n < strlen(_password) + 1; n++)
-//		{
-//			for (i = 0; i < 47; i++)
-//			{
-//				if (_password[n] == alf[i])
-//				{
-//					if (i >= 47)
-//						_password[n] = alf[i - 47];
-//					else
-//						_password[n] = alf[i + 4];//сдвигаем вправо на 4
-//					break;//принудительно выходим из цикла
-//				}
-//			}
-//		}
-//		while (!(file.eof())) {
-//			for (int r = 0; r < file.eof(); r++)
-//			{
-//				file >> id[r];
-//				file >> log[r];
-//				file >> pas[r];
-//				//file >> ch;
-//				if (strcmp(log[r], _login) == 0 || (pas[r], _password) == 0) {
-//					q = 1;
-//					cout << "Вход выполнен!" << endl;
-//					break;
-//					return id[r];
-//				}
-//			}
-//		}
-//		if (q == 0) {
-//			cout << "Повторите ввод!" << endl;
-//
-//		}
-//	}
-//
-//	file.close();
-//}
-//
+int Menu::autorization() {
+	AuthService::getAuthInstance().auth();
+	return 0;
+}
+
 //istream& operator>> (istream& s, User& u) {
 //	char tut;
 //	s >> u.login >> tut >> u.password >> tut >> u.ID >> tut;

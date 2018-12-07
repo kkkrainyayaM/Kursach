@@ -9,7 +9,6 @@
 #include <string>
 #include "IDGenerator.h"
 #include "Lot.h"
-#include "IDGenerator.h"
 #include "Participant.h"
 using namespace std;
 

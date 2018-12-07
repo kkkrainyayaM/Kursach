@@ -1,5 +1,4 @@
 #include "User.h"
-#include "Lot.h"
 
 void User::setName(string name) {
 	this->name = name;

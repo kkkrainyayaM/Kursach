@@ -1,22 +1,8 @@
-#pragma once
-#include "Lot.h"
-#include "Vector.h"
-#include "User.h"
-#include "Participant.h"
-#include "Seller.h"
-#include "Stavka.h"
+#include "DAO.h"
 
-class DAO {
-private:
-	Vector<Seller> sellers = Vector<Seller>();
-	Vector<Participant> participants = Vector<Participant>();
-	Vector<Lot> lots = Vector<Lot>();
-	Vector<Stavka> stavki = Vector<Stavka>();
-	static DAO *instance;
-	DAO() {
-	}
+	DAO *DAO::instance = 0;
 
-	void initSellerVector() {
+	void DAO::initSellerVector() {
 		ifstream file("seller.txt", ios::in | ios::binary);
 		while (!(file.eof())) {
 			if (file.peek() != EOF) {
@@ -30,7 +16,7 @@ private:
 		file.close();
 	}
 
-	void initPartVector() {
+	void DAO::initPartVector() {
 		ifstream file("participant.txt", ios::in | ios::binary);
 		while (!(file.eof())) {
 			int id;
@@ -41,7 +27,7 @@ private:
 		}
 		file.close();
 	}
-	void initLotVector() {
+	void DAO::initLotVector() {
 		ifstream file("lots.txt", ios::in | ios::binary);
 		while (!(file.eof())) {
 			int ID, period;
@@ -54,7 +40,7 @@ private:
 		file.close();
 	}
 
-	void initStavkaVector() {
+	void DAO::initStavkaVector() {
 		ifstream file("stavki.txt", ios::in | ios::binary);
 		while (!(file.eof())) {
 			float _stavka;
@@ -66,8 +52,7 @@ private:
 		file.close();
 	}
 
-public:
-	static DAO *getInstance() {
+	DAO* DAO::getInstance() {
 		if (!instance) {
 			instance = new DAO;
 			instance->initSellerVector();
@@ -78,23 +63,23 @@ public:
 		return instance;
 	}
 
-	Vector<Seller>& getAllSellers() {
+	Vector<Seller>& DAO::getAllSellers() {
 		return sellers;
 	}
 
-	Vector<Participant>& getAllPart() {
+	Vector<Participant>& DAO::getAllPart() {
 		return participants;
 	}
 
-	Vector<Lot>& getAllLots() {
+	Vector<Lot>& DAO::getAllLots() {
 		return lots;
 	}
 
-	Vector<Stavka>& getAllStavki() {
+	Vector<Stavka>& DAO::getAllStavki() {
 		return stavki;
 	}
 
-	Seller* getSellerById(int id) {
+	Seller* DAO::getSellerById(int id) {
 		for (int i = 0; i < sellers.size(); i++) {
 			if (sellers[i].getID() == id) {
 				return &sellers[i];
@@ -103,7 +88,7 @@ public:
 		return NULL;
 	}
 
-	Participant* getPartById(int id) {
+	Participant* DAO::getPartById(int id) {
 		for (int i = 0; i < participants.size(); i++) {
 			if (participants[i].getID() == id) {
 				return &participants[i];
@@ -112,7 +97,7 @@ public:
 		return NULL;
 	}
 
-	Lot* getLotById(int id) {
+	Lot* DAO::getLotById(int id) {
 		for (int i = 0; i < lots.size(); i++) {
 			if (lots[i].getID() == id) {
 				return &lots[i];
@@ -121,7 +106,7 @@ public:
 		return NULL;
 	}
 
-	Stavka* getStavkaByIdPart(int id) {
+	Stavka* DAO::getStavkaByIdPart(int id) {
 		for (int i = 0; i < stavki.size(); i++) {
 			if (stavki[i].getIDPart() == id) {
 				return &stavki[i];
@@ -130,7 +115,7 @@ public:
 		return NULL;
 	}
 
-	Stavka* getStavkaByIdLot(int id) {
+	Stavka* DAO::getStavkaByIdLot(int id) {
 		for (int i = 0; i < stavki.size(); i++) {
 			if (stavki[i].getIDLot() == id) {
 				return &stavki[i];
@@ -139,7 +124,7 @@ public:
 		return NULL;
 	}
 
-	void saveSeller(Seller seller) {
+	void DAO::saveSeller(Seller seller) {
 		ofstream file;
 		file.open("seller.txt", ios::binary | ios::app | ios::out);
 		file << seller;
@@ -147,7 +132,7 @@ public:
 		sellers.push_back(seller);
 	}
 
-	void saveParticipant(Participant participant) {
+	void DAO::saveParticipant(Participant participant) {
 		ofstream file;
 		file.open("participant.txt", ios::binary | ios::app | ios::out);
 		file << participant;
@@ -155,7 +140,7 @@ public:
 		participants.push_back(participant);
 	}
 
-	void saveLot(Lot lot) {
+	void DAO::saveLot(Lot lot) {
 		ofstream file;
 		file.open("lots.txt", ios::binary | ios::app | ios::out);
 		file << lot;
@@ -163,12 +148,24 @@ public:
 		lots.push_back(lot);
 	}
 
-	void saveStavka(Stavka stavka) {
+	void DAO::saveStavka(Stavka stavka) {
 		ofstream file;
 		file.open("stavki.txt", ios::binary | ios::app | ios::out);
 		file << stavka;
 		file.close();
 		stavki.push_back(stavka);
 	}
-};
-DAO *DAO::instance = 0;
+
+	User* DAO::getUserByLogin(string login) {
+		for (int i = 0; i < sellers.size(); i++) {
+			if (sellers[i].getLogin()._Equal(login)) {
+				return &sellers[i];
+			}
+		}
+		for (int i = 0; i < participants.size(); i++) {
+			if (participants[i].getLogin()._Equal(login)) {
+				return &participants[i];
+			}
+		}
+		return nullptr;
+	}

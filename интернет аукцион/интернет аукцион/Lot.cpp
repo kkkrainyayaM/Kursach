@@ -1,6 +1,4 @@
-#include "User.h"
 #include "Lot.h"
-#include "Menu.h"
 //void Lot::setID() {
 //	const int LEN = 4;
 //	const char CH = '\n', SPACE = ' ';

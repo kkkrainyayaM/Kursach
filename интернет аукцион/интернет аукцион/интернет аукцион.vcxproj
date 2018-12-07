@@ -111,7 +111,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AuthService.h" />
     <ClInclude Include="DAO.cpp" />
+    <ClInclude Include="DAO.h" />
     <ClInclude Include="IDGenerator.h" />
     <ClInclude Include="Iterator.h" />
     <ClInclude Include="Lot.h" />

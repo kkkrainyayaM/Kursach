@@ -1,7 +1,5 @@
-#include "User.h"
-#include "Lot.h"
+#pragma once
 #include "Menu.h"
-#include "IDGenerator.h"
 
 int main() {
 	SetConsoleCP(1251);
@@ -42,28 +40,13 @@ int main() {
 			}
 			break;
 
-		/*case '2':
+		case '2':
 		{
 			system("cls");
-			int Id = (Menu::autorization());
-			if (Id < 200) {
-				Seller s;
-				s.getID(Id);
-				s.getName(Id);
-				Menu::menuSel();
-				system("pause");
-				break;
-			}
-			else {
-				Participant p;
-				p.getID(Id);
-				p.getName(Id);
-				Menu::menuPart();
-				system("pause");
-				break;
-			}
+			Menu::autorization();
+			system("pause");
 			break;
-		}*/
+		}
 		case '0':
 			IDGenerator::getInstance()->~IDGenerator();
 			cout << "Всего Доброго!";

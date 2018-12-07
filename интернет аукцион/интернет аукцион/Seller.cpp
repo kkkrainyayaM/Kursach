@@ -1,5 +1,4 @@
 #include "Seller.h"
-#include "User.h"
 
 //void Seller::viewInf() {
 //	char w = NULL;

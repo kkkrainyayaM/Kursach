@@ -1,21 +1,38 @@
-#include "User.h"
+#include "AuthService.h"
+#include "DAO.cpp"
 
-class AuthService {
-private:
-	User currentUser;
-	AuthService() {};
-	~AuthService() {};
-public:
-	static AuthService getInstance() {
-		static AuthService instance;
-		return instance;
+	AuthService AuthService::getAuthInstance() {
+		static AuthService authInstance;
+		return authInstance;
 	}
 
-	void setCurrentUser(User user) {
+	void AuthService::setCurrentUser(User user) {
 		currentUser = user;
 	}
 
-	User getCurrentUser() {
+	User AuthService::getCurrentUser() {
 		return currentUser;
 	}
-};
+    
+	void AuthService::auth() {
+		string login, password;
+		User* user = nullptr;
+		while (user == nullptr) {
+			system("cls");
+			cout << "Login: ";
+			cin >> login;
+			user = DAO::getInstance()->getUserByLogin(login);
+			if (user == nullptr) {
+				cout << "Пользователя с таким login не найдено!" << endl;
+				_getch();
+			}
+		}
+		cout << "Password: ";
+		cin >> password;
+		while (!Encryptor::isEqual(password, user->getPassword())) {
+			cout << "Неверный пароль!";
+			cout << "Password: ";
+			cin >> password;
+		}
+		currentUser = *user;
+	}

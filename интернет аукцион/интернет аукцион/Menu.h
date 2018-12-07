@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 #include <iostream>
 #include <fstream>
 #include <string.h>
@@ -10,6 +9,7 @@
 #include <string>
 #include <algorithm>
 #include <limits>
+#include "AuthService.h"
 //const int NotUsed = system("color F0");
 using namespace std;
 using std::string;
@@ -30,8 +30,8 @@ public:
 		else status = " ";
 	}*/
 	static int registration();
-	/*static int autorization();
-	static int menuSel();
+	static int autorization();
+	/*static int menuSel();
 	static int menuPart();*/
 };
 
