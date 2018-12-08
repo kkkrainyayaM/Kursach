@@ -84,11 +84,14 @@ int Menu::menuSel() {
 				  //	//дописать
 				  //	system("pause");
 				  //	break;
-				  //case '5':
-				  //	//Lot::printLots();
-				  //	//дописать
-				  //	system("pause");
-				  //	break;
+				  case '5':
+					  Vector<Lot> allLotsForUser = DAO::getInstance()->getLotsBySellerId(
+						  AuthService::getAuthInstance()->getCurrentUser().getID());
+					  for (Lot lot : allLotsForUser) {
+						  
+					  }
+				  	system("pause");
+				  	break;
 		case 27:
 			cout << "Всего Доброго!" << endl;
 			break;

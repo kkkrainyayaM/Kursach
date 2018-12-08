@@ -169,3 +169,13 @@
 		}
 		return nullptr;
 	}
+
+	Vector<Lot> DAO::getLotsBySellerId(int id) {
+		Vector<Lot> result = Vector<Lot>();
+		for (int i = 0; i < lots.size(); i++) {
+			if (lots[i].getSellerId() == id) {
+				result.push_back(lots[i]);
+			}
+		}
+		return result;
+	}

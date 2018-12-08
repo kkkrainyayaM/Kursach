@@ -53,4 +53,6 @@ public:
 	void saveStavka(Stavka stavka);
 
 	User* getUserByLogin(string login);
+
+	Vector<Lot> getLotsBySellerId(int id);
 };
