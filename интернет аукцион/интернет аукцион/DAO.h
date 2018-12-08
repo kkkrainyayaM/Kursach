@@ -44,6 +44,8 @@ public:
 
 	Stavka* getStavkaByIdLot(int id);
 
+	Stavka* getStavkaById(int id);
+
 	void saveSeller(Seller seller);
 
 	void saveParticipant(Participant participant);

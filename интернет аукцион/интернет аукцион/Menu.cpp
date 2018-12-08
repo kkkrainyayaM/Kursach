@@ -93,9 +93,10 @@ int Menu::menuSel() {
 						AuthService::getAuthInstance()->getCurrentUser().getID());
 					for (Lot lot : allLotsForUser) {
 						lot.printLot();
-						//все же норм
-						// не знаю. почему хочет скобки, но так работает)
-						// тут крч вызови функцию печати для lot , но для начала сделай ее.
+						Stavka* stavka = DAO::getInstance()->getStavkaById(lot.getLastStavkaId());
+						if (stavka != NULL) {
+							cout << "Текущая ставка: " << stavka->toString() << endl;
+						}
 					}
 					system("pause");
 					break;

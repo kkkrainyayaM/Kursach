@@ -3,6 +3,7 @@
 #include <iostream>
 #include "IDGenerator.h"
 #include "Stavka.h"
+//#include "DAO.h"
 
 using namespace std;
 class Lot {
@@ -21,6 +22,7 @@ public:
 		descr = d;
 		startPrice = s;
 		sellerID = sellerId;
+		lastStavkaId = stavkaId;
 	}
 	~Lot() {
 		/*delete &title;

@@ -14,7 +14,7 @@ Lot Lot::createLot() {
 	cout << "\nСтартовая цена: ";
 	cin >> startPrice;
 	return Lot(IDGenerator::getInstance()->getLotId(), title, descr, startPrice, -1, -1);
-	cout << "\nЛот успешно добавлен!"
+	cout << "\nЛот успешно добавлен!";
 }
 
 
@@ -71,10 +71,9 @@ int Lot::getLastStavkaId() {
 void Lot::printLot() {
 	
 	getLastStavkaId();
-		cout << "Название: " << getTitle() << endl
-		<< "Описание: " << getDescr() << endl
-		<< "Стартовая цена: " << getStartPrice() << endl
-		<< "Текущая ставка: " << getLastStavkaId() << endl;
 	cout << "===============================" << endl;
+	cout << "Название: " << getTitle() << endl
+		<< "Описание: " << getDescr() << endl
+		<< "Стартовая цена: " << getStartPrice() << endl;
 }
 

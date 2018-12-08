@@ -8,6 +8,10 @@ int Stavka::getIDLot() {
 	return IDlot;
 }
 
+int Stavka::getIDStavka() {
+	return IDstavka;
+}
+
 void Stavka::menuStavka() {
 	cout << "1.Стандартная ставка (10)" << endl
 		<< "2.Ваша ставка" << endl;
@@ -19,7 +23,7 @@ void Stavka::menuStavka() {
 	else if (vibor == 2) {
 		cout << "Размер ставки: ";
 		cin >> stavka;
-		Stavka::Stavka(IDpart, IDlot, stavka);
+		Stavka::Stavka(IDstavka, IDpart, IDlot, stavka);
 	}
 	system("pause");
 }
@@ -31,4 +35,8 @@ ostream& operator<< (ostream& s, Stavka& stavka) {
 
 float Stavka::getStavka() {
 	return stavka;
+}
+
+string Stavka::toString() {
+	return "Stavka: " + std::to_string(stavka);
 }

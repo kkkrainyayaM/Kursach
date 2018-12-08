@@ -13,6 +13,7 @@
 using namespace std;
 
 class Stavka{
+	int IDstavka;
 	float stavka;
 	int IDlot;
 	int IDpart;
@@ -20,7 +21,8 @@ public:
 	Stavka() {
 		stavka = 10;
 	}
-	Stavka(int IDp, int IDl ,float st) {
+	Stavka(int IDst, int IDp, int IDl ,float st) {
+		IDstavka = IDst;
 		stavka = st;
 		IDpart = IDp;
 		IDlot = IDl;
@@ -34,6 +36,8 @@ public:
 	void menuStavka();
 	int getIDPart();
 	int getIDLot();
+	int getIDStavka();
 	float getStavka();
 	friend ostream& operator<< (ostream& s, Stavka& stavka);
+	string toString();
 };

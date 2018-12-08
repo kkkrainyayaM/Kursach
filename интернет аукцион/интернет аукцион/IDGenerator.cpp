@@ -17,7 +17,7 @@ IDGenerator::~IDGenerator()
 {
 	ofstream file("ID.txt", ios::out | ios::binary);
 	if (file.is_open()) {
-		file << userId << ' ' << lotId<< '\n';
+		file << userId << ' ' << lotId<< ' ' << stavkaId << '\n';
 		file.close();
 	}
 }
@@ -27,7 +27,10 @@ int IDGenerator::getUserId() {
 }
 
 int IDGenerator::getLotId() {
-	return ++lotId;//поч ???
+	return ++lotId;
+}
+int IDGenerator::getStavkaId() {
+	return ++stavkaId;
 }
 
 void IDGenerator::init() {
@@ -36,6 +39,7 @@ void IDGenerator::init() {
 		while (!(file.eof())) {
 				file >> this->userId;
 				file >> this->lotId;
+				file >> this->stavkaId;
 		}
 	}
 	file.close();

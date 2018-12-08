@@ -34,6 +34,9 @@
 			string title, descr;
 			float startPrice;
 			file >> ID >> title >> descr >> startPrice >> sellerId >> stavkaId;
+			if (stavkaId < 0) {
+				stavkaId = NULL;
+			}
 			Lot lot = Lot(ID, title, descr, startPrice, sellerId, stavkaId);
 			lots.push_back(lot);
 		}
@@ -44,9 +47,9 @@
 		ifstream file("stavki.txt", ios::in | ios::binary);
 		while (!(file.eof())) {
 			float _stavka;
-			int IDl, IDp;
-			file >> IDp >> IDl >> _stavka;
-			Stavka stavka = Stavka(IDp, IDl, _stavka);
+			int IDl, IDp, IDst;
+			file >>IDst >> IDp >> IDl >> _stavka;
+			Stavka stavka = Stavka(IDst, IDp, IDl, _stavka);
 			stavki.push_back(stavka);
 		}
 		file.close();
@@ -58,7 +61,7 @@
 			instance->initSellerVector();
 			instance->initPartVector();
 			instance->initLotVector();
-			//instance->initStavkaVector();
+			instance->initStavkaVector();
 		}
 		return instance;
 	}
@@ -118,6 +121,15 @@
 	Stavka* DAO::getStavkaByIdLot(int id) {
 		for (int i = 0; i < stavki.size(); i++) {
 			if (stavki[i].getIDLot() == id) {
+				return &stavki[i];
+			}
+		}
+		return NULL;
+	}
+
+	Stavka* DAO::getStavkaById(int id) {
+		for (int i = 0; i < stavki.size(); i++) {
+			if (stavki[i].getIDStavka() == id) {
 				return &stavki[i];
 			}
 		}
