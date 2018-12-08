@@ -6,10 +6,10 @@
 		ifstream file("seller.txt", ios::in | ios::binary);
 		while (!(file.eof())) {
 			if (file.peek() != EOF) {
-				int id, raiting;
+				int id;
 				string name, login, password;
-				file >> id  >> login >> password >> name >> raiting;
-				Seller seller = Seller(id, name, login, password, raiting);
+				file >> id  >> login >> password >> name;
+				Seller seller = Seller(id, name, login, password);
 				sellers.push_back(seller);
 			}
 		}
@@ -30,11 +30,11 @@
 	void DAO::initLotVector() {
 		ifstream file("lots.txt", ios::in | ios::binary);
 		while (!(file.eof())) {
-			int ID, period;
+			int ID, sellerId, stavkaId;
 			string title, descr;
-			float startPrice, maxStavka, blicPrice;
-			file >> ID >> title >> descr >> startPrice >> maxStavka >> blicPrice >> period;
-			Lot lot = Lot(ID, title, descr, startPrice, maxStavka, blicPrice, period);
+			float startPrice;
+			file >> ID >> title >> descr >> startPrice >> sellerId >> stavkaId;
+			Lot lot = Lot(ID, title, descr, startPrice, sellerId, stavkaId);
 			lots.push_back(lot);
 		}
 		file.close();

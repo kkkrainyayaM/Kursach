@@ -45,11 +45,11 @@ int main() {
 			system("cls");
 			vozvr = Menu::autorization();
 			switch (vozvr) {
-			case 1:
+			case 0:
 				Menu::menuSel();
 				system("pause");
 				break;
-			case 2:
+			case 1:
 				//Menu::menuPart();
 				system("pause");
 				break;

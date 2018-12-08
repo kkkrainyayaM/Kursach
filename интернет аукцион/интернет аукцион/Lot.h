@@ -1,25 +1,26 @@
 #pragma once
-#include <string> 
+#include <string>
+#include <iostream>
 #include "IDGenerator.h"
+#include "Stavka.h"
+
 using namespace std;
 class Lot {
 	int ID;
 	string title;
 	string descr;
 	float startPrice;
-	float maxStavka;
-	float blicPrice;
-	int period;
+	int lastStavkaId;
+	int sellerID;
 
 public:
 	Lot() {};
-	Lot( int id, string t, string d, float s, float m, float b, int p) {
+	Lot(int id, string t, string d, float s, int sellerId, int stavkaId) {
 		ID = id;
 		title = t;
 		descr = d;
 		startPrice = s;
-		blicPrice = b;
-		period = p;
+		sellerID = sellerId;
 	}
 	~Lot() {
 		/*delete &title;
@@ -28,19 +29,14 @@ public:
 	void setID(int id);
 	int getID();
 	string getTitle();
+	void setTitle(string title);
 	string getDescr();
+	void setDescr(string descr);
 	float getStartPrice();
-	float getMaxStavka();
-	float getBlicPrice();
-	int getPeriod();
-	//static void printLots();
-	//static void menuSort();
-	//static void filtr();
-	//static void sortTitle();
-	//static void sortStVozr();
-	//static void sortPrice();
-	//void redact();
-	//void buyLot(int num1, int idPart);
-	//void deleteLot();
+	void setStartPrice(float startPrice);
+	int getSellerId();
+	void setSellerId(int id);
+	int getLastStavkaId();
+	static Lot createLot();
 	friend ostream& operator<<(ostream& s, Lot& lot);
 };

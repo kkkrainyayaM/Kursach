@@ -45,10 +45,6 @@
 //	return s;
 //}
 
-int Seller::getRaiting() {
-	return this->raiting;
-}
-
 void Seller::toString() {
 	cout << "Имя: " << getName() << endl
 		<< "Логин: " << getLogin() << endl
@@ -57,7 +53,7 @@ void Seller::toString() {
 
 ostream& operator<< (ostream& s, Seller& seller) {
 	s << seller.getID() << " " << seller.getLogin() << " " << seller.getPassword() << " " <<
-		seller.getName() << " " << seller.getRaiting() << endl;
+		seller.getName()  << endl;
 	return s;
 }
 

@@ -50,13 +50,9 @@ int Menu::registration() {
 	return vozvr;
 }
 int Menu::menuSel() {
-	//int id1 = 0;
 	char menu1 = NULL;
 	system("cls");
 	cout << "Вы вошли как продавец." << endl;
-	/*int id = 4;
-	User* user;
-	user = DAO::getInstance()->getSellerById(id);*/
 
 	while (menu1 != 27) {
 		cout << "1.Кабинет пользователя.\n2.Добавление лота.\n3.Редактирование лота.\n4.Удаление лота.\n5.Просмотр всех лотов.\nESC.Выход.\n";
@@ -64,22 +60,20 @@ int Menu::menuSel() {
 		switch (menu1) {
 		case '1': {
 			system("cls");
-			cout << "Кабинет пользователя."<<endl;
-			//Seller::printInf(user);
+			cout << "Кабинет пользователя." << endl;
 			User user = AuthService::getAuthInstance()->getCurrentUser();
 			user.toString();
-			//если будет налл нужнжно отсюда выйти (занчит не залогинился). Эта функция должна вызваться после успешной авторизации пользователя.
-			//printfInf будет вызываться на объекте когда захочешь получить .... потом объясню, с этим разберись
-			// зайди сюда на дебаг
-			// я охуеваю, что за хуйння
 			system("pause");
 			break;
 		}
-				  //case '2':
-				  //	//id1 = s1.retID();
-				  //	//Seller::createLot(id1);
-				  //	system("pause");
-				  //	break;
+		case '2': {
+			Lot lot = Lot::createLot();
+			lot.setSellerId(AuthService::getAuthInstance()->getCurrentUser().getID());
+			DAO::getInstance()->saveLot(lot);
+			system("pause");
+			break;
+		}
+			
 				  //case '3':
 				  //	//Lot::redactLot();
 				  //	//дописать
@@ -155,7 +149,7 @@ int Menu::menuSel() {
 int Menu::autorization() {
 
 	AuthService::getAuthInstance()->auth();
-	return 0;
+	return AuthService::getAuthInstance()->getCurrentUser().getRole();
 }
 
 //istream& operator>> (istream& s, User& u) {
