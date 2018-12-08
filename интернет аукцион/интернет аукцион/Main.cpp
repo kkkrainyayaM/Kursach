@@ -31,7 +31,7 @@ int main() {
 				system("pause");
 				break;
 			case 2:
-				//Menu::menuPart();
+				Menu::menuPart();
 				system("pause");
 				break;
 			default:

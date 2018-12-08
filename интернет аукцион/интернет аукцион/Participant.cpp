@@ -9,3 +9,9 @@ ostream& operator<< (ostream& s, Participant& p) {
 		p.getName() << " " << endl;
 	return s;
 }
+
+void Participant::toString() {
+	cout << "Имя: " << getName() << endl
+		<< "Логин: " << getLogin() << endl
+		<< "Пароль: " << getPassword() << endl;
+}

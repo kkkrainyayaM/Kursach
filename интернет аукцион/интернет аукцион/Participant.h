@@ -11,6 +11,7 @@ public:
 	}
 	void myBuy();
 
+	void toString();
 
 	friend ostream& operator<< (ostream& s, Participant& p);
 };

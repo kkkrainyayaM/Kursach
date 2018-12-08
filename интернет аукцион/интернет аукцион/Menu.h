@@ -32,6 +32,6 @@ public:
 	static int registration();
 	static int autorization();
 	static int menuSel();
-	//static int menuPart();
+	static int menuPart();
 };
 

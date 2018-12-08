@@ -112,53 +112,57 @@ int Menu::menuSel() {
 	}
 	return 0;
 }
-//int Menu::menuPart()
-//{
-//	Participant p1;
-//	char menu1 = NULL;
-//	cout << "Вы вошли как покупатель." << endl;
-//	while (menu1 != 27) {
-//		cout << "1.Мои сделки.\n2.Просмотр лотов.\n3.Сортировка лотов.\n5.Фильтрация лотов.\nESC.Выход.\n";
-//		cin >> menu1;
-//		switch (menu1) {
-//		case '1':
-//			p1.myBuy();
-//			system("pause");
-//			break;
-//		case '2':
-//			//Lot::printLots();
-//			int num;
-//			cout << "1.Покупка.\n0.Выход. ";
-//			cin >> num;
-//			if (num == 1) {
-//				cout << endl << "Номер лота:";
-//				int num1, idPart;
-//				//idPart = p1.retID();
-//				cin >> num1;
-//				//найти num1-ый лот в списке и ???
-//				//l1.buyLot(num1, idPart);
-//			}
-//			system("pause");
-//			break;
-//		case '3':
-//			//Lot::menuSort();
-//			//дописать
-//			system("pause");
-//			break;
-//		case '4':
-//			//Lot::filtr();
-//			//дописать
-//			system("pause");
-//			break;
-//		case 27:
-//			cout << "Всего Доброго!" << endl;
-//			break;
-//		default: cout << "Выберите пункт меню корректно" << endl;
-//			system("pause");
-//			break;
-//		}
-//	}
-//}
+int Menu::menuPart()
+{
+	char menu1 = NULL;
+    system("cls");
+	cout << "Вы вошли как покупатель." << endl;
+	while (menu1 != 27) {
+		cout << "1.Личный кабинет.\n2.Просмотр лотов.\n3.Сортировка лотов.\n5.Фильтрация лотов.\nESC.Выход.\n";
+		menu1 = _getche();
+		switch (menu1) {
+		case '1':{
+			system("cls");
+			cout << "Кабинет пользователя." << endl;
+			User user = AuthService::getAuthInstance()->getCurrentUser();
+			user.toString();
+			system("pause");
+			break;}
+		case '2':
+			//Lot::printLots();
+			int num;
+			cout << "1.Покупка.\n0.Выход. ";
+			cin >> num;
+			if (num == 1) {
+				cout << endl << "Номер лота:";
+				//int num1, idPart;
+				//idPart = p1.retID();
+				//cin >> num1;
+				//найти num1-ый лот в списке и ???
+				//l1.buyLot(num1, idPart);
+			}
+			system("pause");
+			break;
+		case '3':
+			//Lot::menuSort();
+			//дописать
+			system("pause");
+			break;
+		case '4':
+			//Lot::filtr();
+			//дописать
+			system("pause");
+			break;
+		case 27:
+			cout << "Всего Доброго!" << endl;
+			break;
+		default: cout << "Выберите пункт меню корректно" << endl;
+			system("pause");
+			break;
+		}
+	}
+	return 0;
+}
 int Menu::autorization() {
 
 	AuthService::getAuthInstance()->auth();
