@@ -27,7 +27,26 @@ public:
 			}
 		}
 	}
-		
+	
+	static void decodePassword(string* password) {
+		string* _password = password;
+		int i = 0;
+		char alf[] = "abcedfghijklmnopqrstuvwxyz0123456789#!@$%^&*-+=";
+		for (unsigned int n = 0; n < _password->length() + 1; n++)
+		{
+			for (i = 0; i < 47; i++)
+			{
+				if ((*_password)[n] == alf[i])
+				{
+					if (i >= 47)
+						(*_password)[n] = alf[i - 47];
+					else
+						(*_password)[n] = alf[i - 4];
+					break;
+				}
+			}
+		}
+	}
 	static bool isEqual(string password, string encryptedPassword) {
 		string buf = string(password);
 		Encryptor::codePassword(&buf);

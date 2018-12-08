@@ -55,7 +55,9 @@ int Menu::menuSel() {
 	cout << "Вы вошли как продавец." << endl;
 
 	while (menu1 != 27) {
+		system("cls");
 		cout << "1.Кабинет пользователя.\n2.Добавление лота.\n3.Редактирование лота.\n4.Удаление лота.\n5.Просмотр всех лотов.\nESC.Выход.\n";
+		cout << "Ваш выбор: ";
 		menu1 = _getche();
 		switch (menu1) {
 		case '1': {
@@ -67,6 +69,7 @@ int Menu::menuSel() {
 			break;
 		}
 		case '2': {
+			system("cls");
 			Lot lot = Lot::createLot();
 			lot.setSellerId(AuthService::getAuthInstance()->getCurrentUser().getID());
 			DAO::getInstance()->saveLot(lot);
@@ -84,14 +87,20 @@ int Menu::menuSel() {
 				  //	//дописать
 				  //	system("pause");
 				  //	break;
-				  case '5':
-					  Vector<Lot> allLotsForUser = DAO::getInstance()->getLotsBySellerId(
-						  AuthService::getAuthInstance()->getCurrentUser().getID());
-					  for (Lot lot : allLotsForUser) {
-						  
-					  }
-				  	system("pause");
-				  	break;
+		case '5': {
+			system("cls");
+					Vector<Lot> allLotsForUser = DAO::getInstance()->getLotsBySellerId(
+						AuthService::getAuthInstance()->getCurrentUser().getID());
+					for (Lot lot : allLotsForUser) {
+						lot.printLot();
+						//все же норм
+						// не знаю. почему хочет скобки, но так работает)
+						// тут крч вызови функцию печати для lot , но для начала сделай ее.
+					}
+					system("pause");
+					break;
+				  }
+					  
 		case 27:
 			cout << "Всего Доброго!" << endl;
 			break;

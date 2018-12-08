@@ -1,5 +1,4 @@
 #include "User.h"
-
 void User::setName(string name) {
 	this->name = name;
 }
@@ -56,9 +55,10 @@ void User::setRole(Role role) {
 }
 
 void User::toString() {
+	Encryptor::decodePassword(&password);
 	cout << "Имя: " << name << endl
 		<< "Логин: " << login << endl
-		<< "Пароль: " << password << endl;
+		<< "Пароль: " << password  << endl;
 }
 
 Role User::getRole() {

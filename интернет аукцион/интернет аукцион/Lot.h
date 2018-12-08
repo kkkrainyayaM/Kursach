@@ -37,6 +37,7 @@ public:
 	int getSellerId();
 	void setSellerId(int id);
 	int getLastStavkaId();
+	void printLot();
 	static Lot createLot();
 	friend ostream& operator<<(ostream& s, Lot& lot);
 };

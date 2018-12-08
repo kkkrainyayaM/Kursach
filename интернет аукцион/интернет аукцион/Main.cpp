@@ -13,6 +13,7 @@ int main() {
 		<< setw(65) << "----------------" << endl;
 	cout << setw(66) << "ÄÎÁĞÎ ÏÎÆÀËÎÂÀÒÜ!" << endl<< endl;
 	while (menu1 != 27) {
+		system("cls");
 		cout << setw(67) << "Âûáåğèòå ïóíêò ìåíş:" << endl
 			<< setw(65) << "1.Ğåãèñòğàöèÿ" << endl
 			<< setw(58) << "2.Âõîä" << endl
