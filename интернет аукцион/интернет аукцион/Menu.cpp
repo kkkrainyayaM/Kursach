@@ -116,7 +116,7 @@ int Menu::menuSel() {
 			system("cls");
 			Vector<Lot> allLotsForUser = DAO::getInstance()->getLotsBySellerId(
 				AuthService::getAuthInstance()->getCurrentUser().getID());
-			cout << setw(12) << " Номер лота " << "|" << setw(10) << " Название " << "|" << setw(10) << " Описание " << "|" << setw(16) << " Стартовая цена " << "|" << " Текущая ставка " << endl;
+			cout << setw(12) << " Номер лота " << "|" << setw(10) << " Название " << "|" << setw(20) << " Описание " << "|" << setw(16) << " Стартовая цена " << "|" << " Текущая ставка " << endl;
 			for (Lot lot : allLotsForUser) {
 				lot.printLot();
 				Stavka* stavka = DAO::getInstance()->getStavkaById(lot.getLastStavkaId());
@@ -145,12 +145,12 @@ int Menu::menuSel() {
 			system("cls");
 					Vector<Lot> allLotsForUser = DAO::getInstance()->getLotsBySellerId(
 						AuthService::getAuthInstance()->getCurrentUser().getID());
-					cout << setw(12) << " Номер лота " << "|" << setw(10) << " Название " << "|" << setw(10) << " Описание " << "|" << setw(16) << " Стартовая цена " << "|" << " Текущая ставка " << endl;
+					cout << setw(12) << " Номер лота " << "|" << setw(10) << " Название " << "|" << setw(20) << " Описание " << "|" << setw(16) << " Стартовая цена " << "|" << " Текущая ставка " << endl;
 					for (Lot lot : allLotsForUser) {
 						lot.printLot();
 						Stavka* stavka = DAO::getInstance()->getStavkaById(lot.getLastStavkaId());
 						if (stavka != NULL) {
-							cout << setw(16)<< stavka->toString() << endl;
+							cout << setw(16) << stavka->toString() << endl << endl;
 						}
 					}
 					system("pause");
@@ -188,7 +188,7 @@ int Menu::menuPart()
 		case '2': {
 			system("cls");
 			Vector<Lot> allLots = DAO::getInstance()->getAllLots();
-			cout <<endl<< setw(12) << " Номер лота " << "|" << setw(10) << " Название " << "|" << setw(10) << " Описание " << "|" << setw(16) << " Стартовая цена " <<"|"<< " Текущая ставка "<< endl;
+			cout <<endl<< setw(12) << " Номер лота " << "|" << setw(10) << " Название " << "|" << setw(20) << " Описание " << "|" << setw(16) << " Стартовая цена " <<"|"<< " Текущая ставка "<< endl;
 			for (Lot lot : allLots) {
 				lot.printLot();
 				Stavka* stavka = DAO::getInstance()->getStavkaById(lot.getLastStavkaId());
@@ -197,7 +197,7 @@ int Menu::menuPart()
 				}
 			}
 			int vib, num;
-			cout << "1.Покупка.\n0.Выход. "<< endl <<"Ваш выбор: ";
+			cout <<endl<< "1.Покупка.\n0.Выход. "<< endl <<"Ваш выбор: ";
 			cin >> vib;
 			if (vib == 1) {
 				cout << endl << "Номер лота: ";

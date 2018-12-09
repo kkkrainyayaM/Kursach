@@ -3,6 +3,7 @@
 #include <iostream>
 #include "IDGenerator.h"
 #include "Stavka.h"
+#include "Vector.h"
 
 using namespace std;
 class Lot {
@@ -41,7 +42,7 @@ public:
 	int getLastStavkaId();
 	void setLastStavkaId(int id);
 	void printLot();
-	//Vector<Lot>& sortLotsByTitle(Vector<Lot>& lots);
+	Vector<Lot>& sortLotsByTitle(Vector<Lot>& lots);
 	static Lot createLot();
 	friend ostream& operator<<(ostream& s, Lot& lot);
 };

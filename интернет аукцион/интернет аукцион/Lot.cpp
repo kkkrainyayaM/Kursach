@@ -5,12 +5,15 @@
 Lot Lot::createLot() {
 	string title, descr;
 	float startPrice;
+	cin.clear();
+	cin.ignore(100, '\n');
 	cout << "ДОБАВЛЕНИЕ ТОВАРА" << endl << "Название: ";
-	getline(cin,title);
+	cin >> title;
 	cout << "\nОписание: ";
+	cin.ignore(100, '\n');
+	cin.clear();
 	getline(cin,descr);
 	cin.clear();
-	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	cout << "\nСтартовая цена: ";
 	cin >> startPrice;
 	return Lot(IDGenerator::getInstance()->getLotId(), title, descr, startPrice, -1, -1);
@@ -74,11 +77,11 @@ void Lot::setLastStavkaId(int id) {
 
 void Lot::printLot() {
 	cout << endl;
-	cout.width(66);
+	cout.width(76);
 	cout << setfill('_') <<'_';
 	cout << setfill(' ')<< endl << setw(12) << getID() << '|'
 		<< setw(10) << getTitle() << '|'
-		<< setw(10) << getDescr() << '|'
+		<< setw(20) << getDescr() << '|'
 		<< setw(16) << getStartPrice();
 }
 
@@ -90,12 +93,10 @@ bool funcStartPrice(Lot & a, Lot & b) {
 	return a.getStartPrice() < b.getStartPrice();
 }
 
-//Vector<Lot>& Lot::sortLotsByTitle(Vector<Lot>& lots) {
-//	bool funcStartPrice(Lot & a, Lot & b);
-//	sort(lots.begin(), lots.end(), funcStartPrice); // эта функция откуда
-//	std::sort(lots.begin(), lots.end()); // это не будет работать, у тебя кастомынй итератор
-//	return lots;
-//}
+Vector<Lot>& Lot::sortLotsByTitle(Vector<Lot>& lots) {
+	
+	return lots;
+}
 //
 //Lot* Lot::filtrLotsByStartPrise(Vector<Lot>& lots, float otPr, float doPr) {
 //	for (int i = 0; i < lots.size(); i++) {
