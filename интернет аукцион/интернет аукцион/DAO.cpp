@@ -1,8 +1,10 @@
 #include "DAO.h"
 
+using namespace DataAccessObject;
+
 DAO *DAO::instance = 0;
 
-//Lot* findByTitle(Vector<Lot>& lots, string title) {
+//Lot* findByTitle(Vector<Lot>& lots, stri ng title) {
 //	for (int i = 0; i < lots.size(); i++) {
 //		if (lots[i].getTitle() == title){
 //			return &lots[i];
@@ -31,7 +33,7 @@ void DAO::initPartVector() {
 	while (!(file.eof())) {
 		int id;
 		string name, login, password;
-		file >> id >> name >> login >> password;
+		file >> id >> login >> password >> name ;
 		Participant participant = Participant(id, name, login, password);
 		participants.push_back(participant);
 	}

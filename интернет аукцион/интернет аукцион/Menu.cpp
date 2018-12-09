@@ -1,6 +1,6 @@
 #pragma once
 #include "Menu.h"
-
+using namespace DataAccessObject;
 
 int Menu::registration() {
 	char menu2 = NULL;

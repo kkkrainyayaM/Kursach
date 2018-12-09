@@ -6,71 +6,74 @@
 #include "Seller.h"
 #include "Stavka.h"
 
-class DAO {
-private:
-	Vector<Seller> sellers = Vector<Seller>();
-	Vector<Participant> participants = Vector<Participant>();
-	Vector<Lot> lots = Vector<Lot>();
-	Vector<Stavka> stavki = Vector<Stavka>();
-	static DAO *instance;
-	DAO() {}
+namespace DataAccessObject {
 
-	void initSellerVector();
+	class DAO {
+	private:
+		Vector<Seller> sellers = Vector<Seller>();
+		Vector<Participant> participants = Vector<Participant>();
+		Vector<Lot> lots = Vector<Lot>();
+		Vector<Stavka> stavki = Vector<Stavka>();
+		static DAO *instance;
+		DAO() {}
 
-	void initPartVector();
+		void initSellerVector();
 
-	void initLotVector();
+		void initPartVector();
 
-	void initStavkaVector();
+		void initLotVector();
 
-public:
-	static DAO* getInstance();
+		void initStavkaVector();
 
-	Vector<Seller>& getAllSellers();
+	public:
+		static DAO* getInstance();
 
-	Vector<Participant>& getAllPart();
+		Vector<Seller>& getAllSellers();
 
-	Vector<Lot>& getAllLots();
+		Vector<Participant>& getAllPart();
 
-	Vector<Stavka>& getAllStavki();
+		Vector<Lot>& getAllLots();
 
-	Seller* getSellerById(int id);
+		Vector<Stavka>& getAllStavki();
 
-	Participant* getPartById(int id);
+		Seller* getSellerById(int id);
 
-	Lot* getLotById(int id);
+		Participant* getPartById(int id);
 
-	Stavka* getStavkiByIdPart(int id);
+		Lot* getLotById(int id);
 
-	Vector<Stavka> getStavkiByIdLot(int id);
+		Stavka* getStavkiByIdPart(int id);
 
-	Stavka* getStavkaById(int id);
+		Vector<Stavka> getStavkiByIdLot(int id);
 
-	void saveSeller(Seller seller);
+		Stavka* getStavkaById(int id);
 
-	void saveParticipant(Participant participant);
+		void saveSeller(Seller seller);
 
-	void saveLot(Lot lot);
+		void saveParticipant(Participant participant);
 
-	void writeLotToFile(Lot lot);
+		void saveLot(Lot lot);
 
-	void saveStavka(Stavka stavka);
+		void writeLotToFile(Lot lot);
 
-	void writeStavkaToFile(Stavka stavka);
+		void saveStavka(Stavka stavka);
 
-	void clearStavkiFile();
+		void writeStavkaToFile(Stavka stavka);
 
-	void clearLotFile();
+		void clearStavkiFile();
 
-	//Lot* findByTitle(Vector<Lot>& lots, string title);
+		void clearLotFile();
 
-	
+		//Lot* findByTitle(Vector<Lot>& lots, string title);
 
-	void deleteLotById(int id);
 
-	void deleteStavkaById(int id);
 
-	User* getUserByLogin(string login);
+		void deleteLotById(int id);
 
-	Vector<Lot> getLotsBySellerId(int id);
-};
+		void deleteStavkaById(int id);
+
+		User* getUserByLogin(string login);
+
+		Vector<Lot> getLotsBySellerId(int id);
+	};
+}
