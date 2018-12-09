@@ -68,6 +68,10 @@ int Lot::getLastStavkaId() {
 	return this->lastStavkaId;
 }
 
+void Lot::setLastStavkaId(int id) {
+	this->lastStavkaId = id;
+}
+
 void Lot::printLot() {
 	
 	getLastStavkaId();

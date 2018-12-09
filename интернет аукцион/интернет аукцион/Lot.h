@@ -3,7 +3,6 @@
 #include <iostream>
 #include "IDGenerator.h"
 #include "Stavka.h"
-#include "DAO.h"
 
 using namespace std;
 class Lot {
@@ -39,6 +38,7 @@ public:
 	int getSellerId();
 	void setSellerId(int id);
 	int getLastStavkaId();
+	void setLastStavkaId(int id);
 	void printLot();
 	//Vector<Lot>& sortLotsByTitle(Vector<Lot>& lots);
 	static Lot createLot();
