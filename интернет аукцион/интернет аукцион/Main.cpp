@@ -9,11 +9,12 @@ int main() {
 	//cout << std::put_time(std::gmtime(&time), "%c"); добавить время
 	char menu1 = NULL;
 	int vozvr;
+	while (menu1 != 27) {
+		system("cls");
 	cout << endl << endl << setw(65) << "ИНТЕРНЕТ-АУКЦИОН" << endl
 		<< setw(65) << "----------------" << endl;
 	cout << setw(66) << "ДОБРО ПОЖАЛОВАТЬ!" << endl<< endl;
-	while (menu1 != 27) {
-		system("cls");
+		
 		cout << setw(67) << "Выберите пункт меню:" << endl
 			<< setw(65) << "1.Регистрация" << endl
 			<< setw(58) << "2.Вход" << endl
@@ -63,7 +64,7 @@ int main() {
 		}
 		case 27:
 			IDGenerator::getInstance()->~IDGenerator();
-			cout << "Всего Доброго!";
+			cout << " Всего Доброго!";
 			break;
 		default:
 			cout << "Выберите пункт меню корректно";

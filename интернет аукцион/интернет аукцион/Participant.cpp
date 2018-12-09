@@ -11,7 +11,7 @@ ostream& operator<< (ostream& s, Participant& p) {
 }
 
 void Participant::toString() {
-	cout << "Имя: " << getName() << endl
-		<< "Логин: " << getLogin() << endl
-		<< "Пароль: " << getPassword() << endl;
+	cout << setw(8) << "Имя: " << setw(10) << getName() << endl
+		<< setw(8) << "Логин: " << setw(10) << getLogin() << endl
+		<< setw(8) << "Пароль: " << setw(10) << getPassword() << endl;
 }

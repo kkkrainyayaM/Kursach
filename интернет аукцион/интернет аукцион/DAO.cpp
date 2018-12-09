@@ -229,7 +229,7 @@ void DAO::deleteLotById(int id) {
 	for (int i = 0; i < lots.size(); i++) {
 		if (lots[i].getID() == id) {
 			Vector<Stavka> references = getStavkiByIdLot(id);
-			for (Stavka stavka : references) {
+		    for (Stavka stavka : references) {
 				deleteStavkaById(stavka.getIDStavka());
 			}
 			lots.erase(lots.begin() + i);

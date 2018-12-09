@@ -38,5 +38,5 @@ float Stavka::getStavka() {
 }
 
 string Stavka::toString() {
-	return "Stavka: " + std::to_string(stavka);
+	return std::to_string(stavka);
 }

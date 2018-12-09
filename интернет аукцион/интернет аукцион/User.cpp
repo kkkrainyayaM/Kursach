@@ -56,9 +56,9 @@ void User::setRole(Role role) {
 
 void User::toString() {
 	Encryptor::decodePassword(&password);
-	cout << "Имя: " << name << endl
-		<< "Логин: " << login << endl
-		<< "Пароль: " << password  << endl;
+	cout << setw(8) << "Имя: " << setw(10) << name << endl
+		<< setw(8) << "Логин: " << setw(10) << login << endl
+		<< setw(8) << "Пароль: " << setw(10) << password  << endl;
 }
 
 Role User::getRole() {

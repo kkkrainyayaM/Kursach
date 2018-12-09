@@ -6,9 +6,9 @@ Lot Lot::createLot() {
 	string title, descr;
 	float startPrice;
 	cout << "ДОБАВЛЕНИЕ ТОВАРА" << endl << "Название: ";
-	cin >> title;
+	getline(cin,title);
 	cout << "\nОписание: ";
-	cin >> descr;
+	getline(cin,descr);
 	cin.clear();
 	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	cout << "\nСтартовая цена: ";
@@ -73,13 +73,13 @@ void Lot::setLastStavkaId(int id) {
 }
 
 void Lot::printLot() {
-	
-	getLastStavkaId();
-	cout << "===============================" << endl;
-	cout << "Номер лота: " << getID() << endl;
-	cout << "Название: " << getTitle() << endl
-		<< "Описание: " << getDescr() << endl
-		<< "Стартовая цена: " << getStartPrice() << endl;
+	cout << endl;
+	cout.width(66);
+	cout << setfill('_') <<'_';
+	cout << setfill(' ')<< endl << setw(12) << getID() << '|'
+		<< setw(10) << getTitle() << '|'
+		<< setw(10) << getDescr() << '|'
+		<< setw(16) << getStartPrice();
 }
 
 bool funcTitile (Lot & a, Lot & b) { 
