@@ -82,4 +82,26 @@ void Lot::printLot() {
 		<< "Стартовая цена: " << getStartPrice() << endl;
 }
 
+bool funcTitile (Lot & a, Lot & b) { 
+		return a.getTitle() < b.getTitle();  // интересно ты строки сравниваешь
+	}
 
+bool funcStartPrice(Lot & a, Lot & b) {
+	return a.getStartPrice() < b.getStartPrice();
+}
+
+//Vector<Lot>& Lot::sortLotsByTitle(Vector<Lot>& lots) {
+//	bool funcStartPrice(Lot & a, Lot & b);
+//	sort(lots.begin(), lots.end(), funcStartPrice); // эта функция откуда
+//	std::sort(lots.begin(), lots.end()); // это не будет работать, у тебя кастомынй итератор
+//	return lots;
+//}
+//
+//Lot* Lot::filtrLotsByStartPrise(Vector<Lot>& lots, float otPr, float doPr) {
+//	for (int i = 0; i < lots.size(); i++) {
+//		if ((lots[i].getStartPrice() > otPr)&&(lots[i].getStartPrice() > doPr)) {
+//			return &lots[i];
+//		}
+//	}
+//	return NULL;
+//}

@@ -1,2 +1,3 @@
 2 lot1 lot1 1000 1 0
-4 lot3 lot3 121241 1 0
+5 qwewfe rfeerf 43 5 -1
+6 gerfd rg 434 5 -1

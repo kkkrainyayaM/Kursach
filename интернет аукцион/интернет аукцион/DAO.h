@@ -62,6 +62,10 @@ public:
 
 	void clearLotFile();
 
+	//Lot* findByTitle(Vector<Lot>& lots, string title);
+
+	
+
 	void deleteLotById(int id);
 
 	void deleteStavkaById(int id);
