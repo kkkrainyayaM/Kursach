@@ -24,7 +24,6 @@ int main() {
 		case '1':
 			system("cls");
 			vozvr = (Menu::registration());
-			//Menu::setStatus(vozvr);
 			switch (vozvr) {
 			case 1:
 				Menu::menuSel();
@@ -51,7 +50,7 @@ int main() {
 				system("pause");
 				break;
 			case 1:
-				//Menu::menuPart();
+				Menu::menuPart();
 				system("pause");
 				break;
 			default:

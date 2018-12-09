@@ -35,6 +35,7 @@ public:
 	void setDescr(string descr);
 	float getStartPrice();
 	void setStartPrice(float startPrice);
+    //Lot* filtrLotsByStartPrise(Vector<Lot>& lots, float otPr, float doPr);
 	int getSellerId();
 	void setSellerId(int id);
 	int getLastStavkaId();

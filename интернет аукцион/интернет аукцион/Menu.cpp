@@ -1,6 +1,6 @@
 #pragma once
 #include "Menu.h"
-
+using namespace DataAccessObject;
 
 int Menu::registration() {
 	char menu2 = NULL;
@@ -167,10 +167,12 @@ int Menu::menuSel() {
 int Menu::menuPart()
 {
 	char menu1 = NULL;
-    system("cls");
+    
 	cout << "Вы вошли как покупатель." << endl;
 	while (menu1 != 27) {
+		system("cls");
 		cout << "1.Личный кабинет.\n2.Просмотр лотов.\n3.Сортировка лотов.\n5.Фильтрация лотов.\nESC.Выход.\n";
+		cout << "Ваш выбор: ";
 		menu1 = _getche();
 		switch (menu1) {
 		case '1':{
@@ -216,7 +218,6 @@ int Menu::menuPart()
 			system("pause");
 			break;
 		}
-			
 		case '3':
 			//Lot::menuSort();
 			//дописать
