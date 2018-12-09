@@ -72,6 +72,7 @@ void Lot::printLot() {
 	
 	getLastStavkaId();
 	cout << "===============================" << endl;
+	cout << "Номер лота: " << getID() << endl;
 	cout << "Название: " << getTitle() << endl
 		<< "Описание: " << getDescr() << endl
 		<< "Стартовая цена: " << getStartPrice() << endl;

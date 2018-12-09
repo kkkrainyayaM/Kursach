@@ -82,11 +82,34 @@ int Menu::menuSel() {
 				  //	//дописать
 				  //	system("pause");
 				  //	break;
-				  //case '4':
-				  //	//Lot ::deleteLot();
-				  //	//дописать
-				  //	system("pause");
-				  //	break;
+		case '4': {
+			system("cls");
+			Vector<Lot> allLotsForUser = DAO::getInstance()->getLotsBySellerId(
+				AuthService::getAuthInstance()->getCurrentUser().getID());
+			for (Lot lot : allLotsForUser) {
+				lot.printLot();
+				Stavka* stavka = DAO::getInstance()->getStavkaById(lot.getLastStavkaId());
+				if (stavka != NULL) {
+					cout << "Текущая ставка: " << stavka->toString() << endl;
+				}
+			}
+			int choose;
+			bool success = false;
+			while (!success) {
+				cout << "Выберите номер лота для удаления: ";
+				cin >> choose;
+				for (Lot lot : allLotsForUser) {
+					if (lot.getID() == choose) {
+						success = true;
+						break;
+					}
+				}
+			}
+			DAO::getInstance()->deleteLotById(choose);
+			system("pause");
+			break;
+				  }
+				  	
 		case '5': {
 			system("cls");
 					Vector<Lot> allLotsForUser = DAO::getInstance()->getLotsBySellerId(

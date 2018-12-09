@@ -109,7 +109,7 @@
 		return NULL;
 	}
 
-	Stavka* DAO::getStavkaByIdPart(int id) {
+	Stavka* DAO::getStavkiByIdPart(int id) {
 		for (int i = 0; i < stavki.size(); i++) {
 			if (stavki[i].getIDPart() == id) {
 				return &stavki[i];
@@ -118,13 +118,14 @@
 		return NULL;
 	}
 
-	Stavka* DAO::getStavkaByIdLot(int id) {
+	Vector<Stavka> DAO::getStavkiByIdLot(int id) {
+		Vector<Stavka> result = Vector<Stavka>();
 		for (int i = 0; i < stavki.size(); i++) {
 			if (stavki[i].getIDLot() == id) {
-				return &stavki[i];
+				result.push_back(stavki[i]);
 			}
 		}
-		return NULL;
+		return result;
 	}
 
 	Stavka* DAO::getStavkaById(int id) {
@@ -153,19 +154,27 @@
 	}
 
 	void DAO::saveLot(Lot lot) {
+		writeLotToFile(lot);
+		lots.push_back(lot);
+	}
+
+	void DAO::writeLotToFile(Lot lot) {
 		ofstream file;
 		file.open("lots.txt", ios::binary | ios::app | ios::out);
 		file << lot;
 		file.close();
-		lots.push_back(lot);
 	}
 
 	void DAO::saveStavka(Stavka stavka) {
+		writeStavkaToFile(stavka);
+		stavki.push_back(stavka);
+	}
+
+	void DAO::writeStavkaToFile(Stavka stavka) {
 		ofstream file;
 		file.open("stavki.txt", ios::binary | ios::app | ios::out);
 		file << stavka;
 		file.close();
-		stavki.push_back(stavka);
 	}
 
 	User* DAO::getUserByLogin(string login) {
@@ -190,4 +199,46 @@
 			}
 		}
 		return result;
+	}
+
+	void DAO::clearLotFile() {
+		ofstream file;
+		file.open("lots.txt", ios::out);
+		file.close();
+	}
+
+	void DAO::clearStavkiFile() {
+		ofstream file;
+		file.open("stavki.txt", ios::out);
+		file.close();
+	}
+
+	void DAO::deleteLotById(int id) {
+		for (int i = 0; i < lots.size(); i++) {
+			if (lots[i].getID() == id) {
+				Vector<Stavka> references = getStavkiByIdLot(id);
+				for (Stavka stavka : references) {
+					deleteStavkaById(stavka.getIDStavka());
+				}
+				lots.erase(lots.begin() + i);
+				clearLotFile();
+				for (int j = 0; j < lots.size(); j++) {
+					writeLotToFile(lots[j]);
+				}
+				return;
+			}
+		}
+	}
+
+	void DAO::deleteStavkaById(int id) {
+		for (int i = 0; i < stavki.size(); i++) {
+			if (stavki[i].getIDStavka() == id) {
+				clearStavkiFile();
+				stavki.erase(stavki.begin() + i);
+				for (int j = 0; j < stavki.size(); j++) {
+					writeStavkaToFile(stavki[j]);
+				}
+				return;
+			}
+		}
 	}

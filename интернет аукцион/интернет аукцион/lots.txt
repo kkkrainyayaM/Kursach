@@ -1,2 +1,2 @@
-1 lot description 1000 1 -858993460
-2 lot1 descr1 100 1 -858993460
+2 lot1 lot1 1000 1 0
+4 lot3 lot3 121241 1 0

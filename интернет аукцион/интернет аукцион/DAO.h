@@ -40,9 +40,9 @@ public:
 
 	Lot* getLotById(int id);
 
-	Stavka* getStavkaByIdPart(int id);
+	Stavka* getStavkiByIdPart(int id);
 
-	Stavka* getStavkaByIdLot(int id);
+	Vector<Stavka> getStavkiByIdLot(int id);
 
 	Stavka* getStavkaById(int id);
 
@@ -52,7 +52,19 @@ public:
 
 	void saveLot(Lot lot);
 
+	void writeLotToFile(Lot lot);
+
 	void saveStavka(Stavka stavka);
+
+	void writeStavkaToFile(Stavka stavka);
+
+	void clearStavkiFile();
+
+	void clearLotFile();
+
+	void deleteLotById(int id);
+
+	void deleteStavkaById(int id);
 
 	User* getUserByLogin(string login);
 
