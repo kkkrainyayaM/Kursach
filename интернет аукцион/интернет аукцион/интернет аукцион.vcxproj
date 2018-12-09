@@ -138,6 +138,7 @@
     <ClCompile Include="Seller.cpp" />
     <ClCompile Include="Stavka.cpp" />
     <ClCompile Include="User.cpp" />
+    <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="log_pas.txt" />

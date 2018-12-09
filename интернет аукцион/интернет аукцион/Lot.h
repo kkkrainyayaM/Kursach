@@ -3,7 +3,7 @@
 #include <iostream>
 #include "IDGenerator.h"
 #include "Stavka.h"
-//#include "DAO.h"
+#include "DAO.h"
 
 using namespace std;
 class Lot {
@@ -40,6 +40,7 @@ public:
 	void setSellerId(int id);
 	int getLastStavkaId();
 	void printLot();
+	//Vector<Lot>& sortLotsByTitle(Vector<Lot>& lots);
 	static Lot createLot();
 	friend ostream& operator<<(ostream& s, Lot& lot);
 };

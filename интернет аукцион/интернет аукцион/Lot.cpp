@@ -1,6 +1,6 @@
 #include "Lot.h"
-
-
+#include "DAO.h"
+#include <algorithm>
 
 Lot Lot::createLot() {
 	string title, descr;
@@ -76,4 +76,5 @@ void Lot::printLot() {
 		<< "Описание: " << getDescr() << endl
 		<< "Стартовая цена: " << getStartPrice() << endl;
 }
+
 
