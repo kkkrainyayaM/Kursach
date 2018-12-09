@@ -180,21 +180,43 @@ int Menu::menuPart()
 			user.toString();
 			system("pause");
 			break;}
-		case '2':
-			//Lot::printLots();
+		case '2': {
+			Vector<Lot> allLots = DAO::getInstance()->getAllLots();
+			for (Lot lot : allLots) {
+				lot.printLot();
+				Stavka* stavka = DAO::getInstance()->getStavkaById(lot.getLastStavkaId());
+				if (stavka != NULL) {
+					cout << "Текущая ставка: " << stavka->toString() << endl;
+				}
+			}
 			int num;
 			cout << "1.Покупка.\n0.Выход. ";
 			cin >> num;
 			if (num == 1) {
-				cout << endl << "Номер лота:";
-				//int num1, idPart;
-				//idPart = p1.retID();
-				//cin >> num1;
-				//найти num1-ый лот в списке и ???
-				//l1.buyLot(num1, idPart);
+				cout << endl << "Номер лота: ";
+				Lot* lot = DAO::getInstance()->getLotById(num);
+				Stavka* oldStavka = DAO::getInstance()->getStavkaById(lot->getLastStavkaId());
+				float stavka;
+				cout << endl << "Сумма ставки: ";
+				cin >> stavka;
+				Stavka newStavka = Stavka(IDGenerator::getInstance()->getStavkaId(),
+					AuthService::getAuthInstance()->getCurrentUser().getID(),
+					lot->getID(), stavka);
+				DAO::getInstance()->saveStavka(newStavka);
+				if (oldStavka == NULL) {
+					lot->setLastStavkaId(newStavka.getIDStavka());
+				}
+				else {
+					if (oldStavka->getStavka() < newStavka.getStavka()) {
+						lot->setLastStavkaId(newStavka.getIDStavka());
+					}
+				}
+
 			}
 			system("pause");
 			break;
+		}
+			
 		case '3':
 			//Lot::menuSort();
 			//дописать
@@ -220,36 +242,3 @@ int Menu::autorization() {
 	AuthService::getAuthInstance()->auth();
 	return AuthService::getAuthInstance()->getCurrentUser().getRole();
 }
-
-//istream& operator>> (istream& s, User& u) {
-//	char tut;
-//	s >> u.login >> tut >> u.password >> tut >> u.ID >> tut;
-//	return s;
-//}
-//ostream& operator<< (ostream& s, User& u) {
-//	s << u.login << " " << u.password << " " << u.ID << '\n';
-//	return s;
-//}
-//
-//ostream& operator<< (ostream& s, Lot& l) {
-//	s << l.ID << " " << l.title << " " << l.descr << " " << l.startPrice << " " << l.maxStavka << " " << l.blicPrice << " " << l.period << "\n";
-//	return s;
-//}
-//istream& operator>> (istream& s, Participant& p) {
-//	char tut;
-//	s >> p.stavka >> tut;
-//	return s;
-//}
-//ostream& operator<< (ostream& s, Participant& p) {
-//	s << p.stavka << '\n';
-//	return s;
-//}
-//istream& operator>> (istream& q, Seller& s) {
-//	char tut;
-//	q >> s.raiting >> tut;
-//	return q;
-//}
-//ostream& operator<< (ostream& q, Seller& s) {
-//	q << s.raiting << '\n';
-//	return q;
-//}
