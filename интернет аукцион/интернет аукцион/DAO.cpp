@@ -46,11 +46,10 @@ void DAO::initLotVector() {
 		string title, descr;
 		float startPrice;
 		file >> ID >> title >> descr >> startPrice >> sellerId >> stavkaId;
-		if (stavkaId < 0) {
-			stavkaId = NULL;
+		if (ID >= 0) {
+			Lot lot = Lot(ID, title, descr, startPrice, sellerId, stavkaId);
+			lots.push_back(lot);
 		}
-		Lot lot = Lot(ID, title, descr, startPrice, sellerId, stavkaId);
-		lots.push_back(lot);
 	}
 	file.close();
 }

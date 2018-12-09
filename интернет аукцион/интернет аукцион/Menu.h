@@ -30,7 +30,7 @@ public:
 		else status = " ";
 	}*/
 	static int registration();
-	static int autorization();
+	static Role autorization();
 	static int menuSel();
 	static int menuPart();
 };

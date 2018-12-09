@@ -44,13 +44,14 @@ int main() {
 		case '2':
 		{
 			system("cls");
-			vozvr = Menu::autorization();
-			switch (vozvr) {
-			case 0:
+			Role role;
+			role = Menu::autorization();
+			switch (role) {
+			case SELLER:
 				Menu::menuSel();
 				system("pause");
 				break;
-			case 1:
+			case PARTICIPANT:
 				Menu::menuPart();
 				system("pause");
 				break;

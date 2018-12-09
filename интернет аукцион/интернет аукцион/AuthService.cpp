@@ -36,6 +36,6 @@
 			cout << "Пароль: ";
 			cin >> password;
 		}
-		currentUser = User(*user);
+		currentUser = *user;
 	}
 	AuthService* AuthService::instance = 0;

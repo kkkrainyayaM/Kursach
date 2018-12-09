@@ -69,6 +69,7 @@ int Menu::menuSel() {
 			break;
 		}
 		case '2': {
+
 			system("cls");
 			Lot lot = Lot::createLot();
 			lot.setSellerId(AuthService::getAuthInstance()->getCurrentUser().getID());
@@ -243,8 +244,9 @@ int Menu::menuPart()
 		}
 	}
 	return 0;
+
 }
-int Menu::autorization() {
+Role Menu::autorization() {
 
 	AuthService::getAuthInstance()->auth();
 	return AuthService::getAuthInstance()->getCurrentUser().getRole();
