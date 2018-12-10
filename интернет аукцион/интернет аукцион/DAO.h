@@ -64,9 +64,7 @@ namespace DataAccessObject {
 
 		void clearLotFile();
 
-		//Lot* findByTitle(Vector<Lot>& lots, string title);
-
-
+		Lot* findByTitle(string title);
 
 		void deleteLotById(int id);
 

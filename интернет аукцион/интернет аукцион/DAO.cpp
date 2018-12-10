@@ -4,14 +4,16 @@ using namespace DataAccessObject;
 
 DAO *DAO::instance = 0;
 
-//Lot* findByTitle(Vector<Lot>& lots, stri ng title) {
-//	for (int i = 0; i < lots.size(); i++) {
-//		if (lots[i].getTitle() == title){
-//			return &lots[i];
-//		}
-//	}
-//	return NULL;
-//}
+
+
+Lot* DAO::findByTitle( string title) {
+	for (int i = 0; i < lots.size(); i++) {
+		if (lots[i].getTitle() == title){
+			return &lots[i];
+		}
+	}
+	return NULL;
+}
 
 
 void DAO::initSellerVector() {
@@ -42,12 +44,12 @@ void DAO::initPartVector() {
 void DAO::initLotVector() {
 	ifstream file("lots.txt", ios::in | ios::binary);
 	while (!(file.eof())) {
-		int ID, sellerId, stavkaId;
+		int ID, sellerId, stavkaId, finishDay, finishMonth, finishYear;
 		string title, descr;
 		float startPrice;
-		file >> ID >> title >> descr >> startPrice >> sellerId >> stavkaId;
+		file >> ID >> title >> descr >> startPrice >> finishDay>> finishMonth>> finishYear>> sellerId >> stavkaId;
 		if (ID >= 0) {
-			Lot lot = Lot(ID, title, descr, startPrice, sellerId, stavkaId);
+			Lot lot = Lot(ID, title, descr, startPrice, finishDay, finishMonth, finishYear, sellerId, stavkaId);
 			lots.push_back(lot);
 		}
 	}

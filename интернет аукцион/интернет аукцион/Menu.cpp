@@ -117,7 +117,7 @@ int Menu::menuSel() {
 			system("cls");
 			Vector<Lot> allLotsForUser = DAO::getInstance()->getLotsBySellerId(
 				AuthService::getAuthInstance()->getCurrentUser().getID());
-			cout << setw(12) << " Номер лота " << "|" << setw(10) << " Название " << "|" << setw(20) << " Описание " << "|" << setw(16) << " Стартовая цена " << "|" << " Текущая ставка " << endl;
+			cout << setw(12) << " Номер лота " << "|" << setw(10) << " Название " << "|" << setw(20) << " Описание " << "|" << setw(16) << " Стартовая цена " << "|" <<setw(14) << "Конец торгов "<<'|'<< " Текущая ставка " << endl;
 			for (Lot lot : allLotsForUser) {
 				lot.printLot();
 				Stavka* stavka = DAO::getInstance()->getStavkaById(lot.getLastStavkaId());
@@ -146,7 +146,7 @@ int Menu::menuSel() {
 			system("cls");
 					Vector<Lot> allLotsForUser = DAO::getInstance()->getLotsBySellerId(
 						AuthService::getAuthInstance()->getCurrentUser().getID());
-					cout << setw(12) << " Номер лота " << "|" << setw(10) << " Название " << "|" << setw(20) << " Описание " << "|" << setw(16) << " Стартовая цена " << "|" << " Текущая ставка " << endl;
+					cout << setw(12) << " Номер лота " << "|" << setw(10) << " Название " << "|" << setw(20) << " Описание " << "|" << setw(16) << " Стартовая цена " << "|" << setw(14) << "Конец торгов " << "|" << " Текущая ставка ";
 					for (Lot lot : allLotsForUser) {
 						lot.printLot();
 						Stavka* stavka = DAO::getInstance()->getStavkaById(lot.getLastStavkaId());
@@ -189,7 +189,7 @@ int Menu::menuPart()
 		case '2': {
 			system("cls");
 			Vector<Lot> allLots = DAO::getInstance()->getAllLots();
-			cout <<endl<< setw(12) << " Номер лота " << "|" << setw(10) << " Название " << "|" << setw(20) << " Описание " << "|" << setw(16) << " Стартовая цена " <<"|"<< " Текущая ставка "<< endl;
+			cout <<endl<< setw(12) << " Номер лота " << "|" << setw(10) << " Название " << "|" << setw(20) << " Описание " << "|" << setw(16) << " Стартовая цена " << "|" << setw(14) << "Конец торгов " << "|"<< " Текущая ставка "<< endl;
 			for (Lot lot : allLots) {
 				lot.printLot();
 				Stavka* stavka = DAO::getInstance()->getStavkaById(lot.getLastStavkaId());
@@ -225,16 +225,67 @@ int Menu::menuPart()
 			system("pause");
 			break;
 		}
-		case '3':
-			//Lot::menuSort();
-			//дописать
+		case '3': {
+			system("cls");
+			cout << "1.Сортировка по алфавиту.\n2.Сортировка по стартовой цене.\n" << "Ваш выбор: ";
+			int vib;
+			Vector<Lot> lots = DAO::getInstance()->getAllLots();
+			cin >> vib;
+			if (vib == 1) {
+				Lot::sortLotsByTitle(lots);
+			}
+			else if (vib == 2) {
+				Lot::sortLotsByStPrice(lots);
+			}
+			cout << endl << setw(12) << " Номер лота " << "|" << setw(10) << " Название " << "|" << setw(20) << " Описание " << "|" << setw(16) << " Стартовая цена " << "|" << setw(14) << "Конец торгов " << "|" << " Текущая ставка ";
+			for (Lot lot : lots) {
+				lot.printLot();
+				Stavka* stavka = DAO::getInstance()->getStavkaById(lot.getLastStavkaId());
+				if (stavka != NULL) {
+					cout << "|" << setw(16) << stavka->toString();
+				}
+			}
+				system("pause");
+			break; }
+		case '4': {
+			system("cls");
+			string title;
+			cout << "Введите название лота: ";
+			cin >> title;
+			Lot* lot = DAO::getInstance()->findByTitle(title);
+			if (lot != NULL) {
+				cout << endl << setw(12) << " Номер лота " << "|" << setw(10) << " Название "
+					<< "|" << setw(20) << " Описание " << "|" << setw(16) 
+					<< " Стартовая цена " << "|" << setw(14) << "Конец торгов " << "|" << " Текущая ставка ";
+				lot->printLot();
+				Stavka* stavka = DAO::getInstance()->getStavkaById(lot->getLastStavkaId());
+				if (stavka != NULL) {
+					cout << "|" << setw(16) << stavka->toString();
+				}
+			}
+			else cout << "\nЛотов с таким названием нет!";
 			system("pause");
 			break;
-		case '4':
-			//Lot::filtr();
-			//дописать
+		}
+		case '5': {
+			system("cls");
+			float otSt, doSt;
+			cout << "Введите диапазон значений: от А=";
+			cin >> otSt;
+			cout << "  до В=";
+			cin >> doSt;
+			Vector<Lot> Lots = DAO::getInstance()->getAllLots();
+			Lot* lot = Lot::filtrLotsByStPrise(Lots, otSt, doSt);
+			cout << endl << setw(12) << " Номер лота " << "|" << setw(10) << " Название " << "|" << setw(20) << " Описание " << "|" << setw(16) << " Стартовая цена " << "|" << setw(14) << "Конец торгов " << "|" << " Текущая ставка " << endl;
+			for (Lot lot : Lots) {
+				lot.printLot();
+				Stavka* stavka = DAO::getInstance()->getStavkaById(lot.getLastStavkaId());
+				if (stavka != NULL) {
+					cout << "|" << setw(16) << stavka->toString();
+				}
+			}
 			system("pause");
-			break;
+			break; }
 		case 27:
 			cout << " Всего Доброго!" << endl;
 			break;
@@ -250,4 +301,89 @@ Role Menu::autorization() {
 
 	AuthService::getAuthInstance()->auth();
 	return AuthService::getAuthInstance()->getCurrentUser().getRole();
+}
+
+void Menu::programmTime() {
+	int vih = 0;
+	int year, day, month;
+	while (vih != 1) {
+		cout <<"\nВведите год (цифрами (4 цифры)): ";
+		cin >> year;
+		vih = prov_year(year);
+	}
+	vih = 0;
+	while (vih != 1) {
+		cout <<"\nВведите месяц (цифрами): ";
+		cin >> month;
+		vih = prov_month(month);
+	}
+	vih = 0;
+	while (vih != 1) {
+		cout <<"\nВведите день (цифрами): ";
+		cin >> day;
+		vih = prov_month(month);
+	}
+	if (vih == 1) {
+		setDay(day);
+		setMonth(month);
+		setYear(year);
+	}
+	while (getchar() != '\n')
+		continue;
+}
+
+int Menu::prov_year(int year)
+{
+	int i = 0, x = 0;
+	while (year != 0)
+	{
+		if (year >= 2018 && year <= 2100)
+			return 1;
+		else
+		{
+			cout <<"Введите реальный год\n";
+			return 0;
+		}
+	}
+	return 0;
+}
+int Menu::prov_month(int month)
+{
+	int i = 0, x = 0;
+	while (month != 0)
+	{
+		if (month >= 1 && month <= 12)
+			return 1;
+		else
+		{
+			cout << "Введите реальный месяц\n";
+			return 0;
+		}
+	}
+	return 0;
+}
+
+int Menu:: prov_day(int day){
+	int i = 0, x = 0;
+	while (day != '\0')
+	{
+		if (day >= 1 && day <= 30)
+			return 1;
+		else
+		{
+			cout << "Введите реальный день\n";
+			return 0;
+		}
+	}
+	return 0;
+}
+
+void Menu::setDay(int day1) {
+	day = day1;
+}
+void Menu::setMonth(int month1) {
+	month = month1;
+}
+void Menu::setYear(int year1) {
+	year = year1;
 }

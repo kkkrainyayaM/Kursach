@@ -5,6 +5,7 @@
 Lot Lot::createLot() {
 	string title, descr;
 	float startPrice;
+	int finishDay, finishMonth, finishYear;
 	cin.clear();
 	cin.ignore(100, '\n');
 	cout << "ДОБАВЛЕНИЕ ТОВАРА" << endl << "Название: ";
@@ -12,18 +13,25 @@ Lot Lot::createLot() {
 	cout << "\nОписание: ";
 	cin.ignore(100, '\n');
 	cin.clear();
-	getline(cin,descr);
+	cin >> descr;
 	cin.clear();
 	cout << "\nСтартовая цена: ";
 	cin >> startPrice;
-	return Lot(IDGenerator::getInstance()->getLotId(), title, descr, startPrice, -1, -1);
+	cout << "\nВремя окончания торгов: ";
+	cout << "\nВведите год (цифрами (4 цифры)): ";
+	cin >> finishYear;
+	cout << "\nВведите месяц (цифрами): ";
+	cin >> finishMonth;
+	cout << "\nВведите день (цифрами): ";
+	cin >> finishDay;
+	return Lot(IDGenerator::getInstance()->getLotId(), title, descr, startPrice, finishDay, finishMonth, finishYear, -1, -1);
 	cout << "\nЛот успешно добавлен!";
 }
 
 
 ostream& operator<< (ostream& s, Lot& lot) {
 	s << lot.getID() << " " << lot.getTitle() << " " << lot.getDescr() << " " <<
-		lot.getStartPrice() << " " << lot.getSellerId() << " " << lot.getLastStavkaId() << endl;
+		lot.getStartPrice() << " " << lot.getDay() << " " << lot.getMonth() << " " << lot.getYear() << " " << lot.getSellerId() << " " << lot.getLastStavkaId() << endl;
 	return s;
 }
 
@@ -33,6 +41,30 @@ int Lot::getID() {
 
 void Lot::setID(int id) {
 	this->ID = id;
+}
+
+int Lot::getDay() {
+	return finishDay;
+}
+
+void Lot::setDay(int d) {
+	this->finishDay = d;
+}
+
+int Lot::getMonth() {
+	return finishMonth;
+}
+
+void Lot::setMonth(int m) {
+	this->finishMonth = m;
+}
+
+int Lot::getYear() {
+	return finishYear;
+}
+
+void Lot::setYear(int y) {
+	this->finishYear = y;
 }
 
 string Lot::getTitle() {
@@ -77,32 +109,49 @@ void Lot::setLastStavkaId(int id) {
 
 void Lot::printLot() {
 	cout << endl;
-	cout.width(76);
-	cout << setfill('_') <<'_';
-	cout << setfill(' ')<< endl << setw(12) << getID() << '|'
+	cout.width(90);
+	cout << setfill('_') << '_';
+	cout << setfill(' ') << endl << setw(12) << getID() << '|'
 		<< setw(10) << getTitle() << '|'
 		<< setw(20) << getDescr() << '|'
+		<< setw(14) << getDay() << '.' << getMonth() << '.' << getYear() << '|'
 		<< setw(16) << getStartPrice();
 }
-
-bool funcTitile (Lot & a, Lot & b) { 
-		return a.getTitle() < b.getTitle();  // интересно ты строки сравниваешь
+Lot* Lot::filtrLotsByStPrise(Vector<Lot>& lots, float otPr, float doPr) {
+	for (int i = 0; i < lots.size(); i++) {
+		if ((lots[i].getStartPrice() > otPr) && (lots[i].getStartPrice() > doPr)) {
+			return &lots[i];
+		}
 	}
-
-bool funcStartPrice(Lot & a, Lot & b) {
-	return a.getStartPrice() < b.getStartPrice();
+	return NULL;
 }
 
 Vector<Lot>& Lot::sortLotsByTitle(Vector<Lot>& lots) {
-	
+	Lot tmp;
+	for (int i = 1; i < lots.size(); i++) {
+		for (int j = 1; j < lots.size(); j++) {
+			if (lots[j - 1].getTitle() > lots[j].getTitle()) {
+				tmp = lots[j - 1];
+				lots[j - 1] = lots[j];
+				lots[j] = tmp;
+			}
+		}
+	}
 	return lots;
 }
-//
-//Lot* Lot::filtrLotsByStartPrise(Vector<Lot>& lots, float otPr, float doPr) {
-//	for (int i = 0; i < lots.size(); i++) {
-//		if ((lots[i].getStartPrice() > otPr)&&(lots[i].getStartPrice() > doPr)) {
-//			return &lots[i];
-//		}
-//	}
-//	return NULL;
-//}
+
+
+
+Vector<Lot>& Lot::sortLotsByStPrice(Vector<Lot>& lots) {
+	Lot tmp;
+	for (int i = 1; i < lots.size(); i++) {
+		for (int j = 1; j < lots.size(); j++) {
+			if (lots[j - 1].getStartPrice() > lots[j].getStartPrice()) {
+				tmp = lots[j - 1];
+				lots[j - 1] = lots[j];
+				lots[j] = tmp;
+			}
+		}
+	}
+	return lots;
+}

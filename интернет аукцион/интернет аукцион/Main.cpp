@@ -4,17 +4,15 @@
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	//auto time = std::time(nullptr);
-	//cout.imbue(std::locale("ru_RU.utf8"));
-	//cout << std::put_time(std::gmtime(&time), "%c"); äîáàâèòü âðåìÿ
 	char menu1 = NULL;
 	int vozvr;
 	while (menu1 != 27) {
 		system("cls");
-	cout << endl << endl << setw(65) << "ÈÍÒÅÐÍÅÒ-ÀÓÊÖÈÎÍ" << endl
-		<< setw(65) << "----------------" << endl;
-	cout << setw(66) << "ÄÎÁÐÎ ÏÎÆÀËÎÂÀÒÜ!" << endl<< endl;
-		
+		Menu::programmTime();
+		cout << endl << endl << setw(65) << "ÈÍÒÅÐÍÅÒ-ÀÓÊÖÈÎÍ" << endl
+			<< setw(65) << "----------------" << endl;
+		cout << setw(66) << "ÄÎÁÐÎ ÏÎÆÀËÎÂÀÒÜ!" << endl << endl;
+
 		cout << setw(67) << "Âûáåðèòå ïóíêò ìåíþ:" << endl
 			<< setw(65) << "1.Ðåãèñòðàöèÿ" << endl
 			<< setw(58) << "2.Âõîä" << endl
@@ -61,7 +59,7 @@ int main() {
 				break;
 			}
 			break;
-			
+
 		}
 		case 27:
 			IDGenerator::getInstance()->~IDGenerator();
