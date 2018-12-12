@@ -124,6 +124,7 @@
     <ClInclude Include="Seller.h" />
     <ClInclude Include="seller.txt" />
     <ClInclude Include="Stavka.h" />
+    <ClInclude Include="Time.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>

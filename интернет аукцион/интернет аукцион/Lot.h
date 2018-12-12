@@ -43,7 +43,7 @@ public:
 	void setDescr(string descr);
 	float getStartPrice();
 	void setStartPrice(float startPrice);
-    static Lot* filtrLotsByStPrise(Vector<Lot>& lots, float otPr, float doPr);
+    static Vector<Lot>& filtrLotsByStPrise(Vector<Lot>& lots, float otPr, float doPr);
 	void setDay(int d);
 	int getDay();
 	void setMonth(int m);

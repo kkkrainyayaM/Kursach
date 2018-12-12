@@ -1,6 +1,7 @@
 #include "Lot.h"
 #include "DAO.h"
 #include <algorithm>
+#include "Vector.h"
 
 Lot Lot::createLot() {
 	string title, descr;
@@ -117,13 +118,19 @@ void Lot::printLot() {
 		<< setw(14) << getDay() << '.' << getMonth() << '.' << getYear() << '|'
 		<< setw(16) << getStartPrice();
 }
-Lot* Lot::filtrLotsByStPrise(Vector<Lot>& lots, float otPr, float doPr) {
+
+Vector<Lot>& Lot::filtrLotsByStPrise(Vector<Lot>& lots, float otPr, float doPr) {
+	static Vector<Lot> filtr = Vector<Lot>(lots.size());
+	int j = 0;
 	for (int i = 0; i < lots.size(); i++) {
-		if ((lots[i].getStartPrice() > otPr) && (lots[i].getStartPrice() > doPr)) {
-			return &lots[i];
+		if (lots[i].getStartPrice() >= otPr) {
+			if (lots[i].getStartPrice() <= doPr) {
+				filtr[j] = lots[i];
+				j++;
+			}
 		}
 	}
-	return NULL;
+	return filtr;
 }
 
 Vector<Lot>& Lot::sortLotsByTitle(Vector<Lot>& lots) {

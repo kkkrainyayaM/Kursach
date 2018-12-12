@@ -274,21 +274,22 @@ int Menu::menuPart()
 		case '5': {
 			system("cls");
 			float otSt, doSt;
-			cout << "Введите диапазон значений: от А=";
+			cout << "Введите диапазон значений: \n  от А=";
 			cin >> otSt;
 			cout << "  до В=";
 			cin >> doSt;
 			Vector<Lot> Lots = DAO::getInstance()->getAllLots();
-			Lot* lot = Lot::filtrLotsByStPrise(Lots, otSt, doSt);
+			Vector<Lot> filtr = Lot::filtrLotsByStPrise(Lots, otSt, doSt);
 			cout << endl << setw(12) << " Номер лота " << "|" << setw(20) << " Название " << "|" << setw(20) << " Описание " << "|" << setw(14) << "Конец торгов " << "|"<< setw(16) 
 				<< " Стартовая цена " << "|"  << " Текущая ставка ";
-			for (Lot lot : Lots) {//как должен выглядеть цикл?
+			for (Lot lot : filtr) {
 				lot.printLot();
 				Stavka* stavka = DAO::getInstance()->getStavkaById(lot.getLastStavkaId());
 				if (stavka != NULL) {
 					cout << "|" << setw(16) << stavka->toString();
 				}
 			}
+			cout << endl;
 			system("pause");
 			break; }
 		case 27:
