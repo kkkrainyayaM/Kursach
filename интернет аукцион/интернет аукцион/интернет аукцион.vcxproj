@@ -140,7 +140,6 @@
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="log_pas.txt" />
     <Text Include="ID.txt" />
     <Text Include="lots.txt" />
     <Text Include="stavki.txt" />

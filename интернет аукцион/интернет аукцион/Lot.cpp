@@ -109,10 +109,10 @@ void Lot::setLastStavkaId(int id) {
 
 void Lot::printLot() {
 	cout << endl;
-	cout.width(90);
+	cout.width(100);
 	cout << setfill('_') << '_';
 	cout << setfill(' ') << endl << setw(12) << getID() << '|'
-		<< setw(10) << getTitle() << '|'
+		<< setw(20) << getTitle() << '|'
 		<< setw(20) << getDescr() << '|'
 		<< setw(14) << getDay() << '.' << getMonth() << '.' << getYear() << '|'
 		<< setw(16) << getStartPrice();

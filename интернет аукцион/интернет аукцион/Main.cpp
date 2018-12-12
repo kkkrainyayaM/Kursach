@@ -8,7 +8,7 @@ int main() {
 	int vozvr;
 	while (menu1 != 27) {
 		system("cls");
-		Menu::programmTime();
+		//Menu::programmTime();
 		cout << endl << endl << setw(65) << "ИНТЕРНЕТ-АУКЦИОН" << endl
 			<< setw(65) << "----------------" << endl;
 		cout << setw(66) << "ДОБРО ПОЖАЛОВАТЬ!" << endl << endl;
@@ -33,7 +33,7 @@ int main() {
 				system("pause");
 				break;
 			default:
-				cout << "\nПроизошла Ошибка!";
+				cout << "\nПроизошла Ошибка!"<< endl;
 				system("pause");
 				break;
 			}
@@ -54,7 +54,7 @@ int main() {
 				system("pause");
 				break;
 			default:
-				cout << "\nПроизошла Ошибка!";
+				cout << "\nПроизошла Ошибка!"<< endl;
 				system("pause");
 				break;
 			}
@@ -63,10 +63,10 @@ int main() {
 		}
 		case 27:
 			IDGenerator::getInstance()->~IDGenerator();
-			cout << " Всего Доброго!";
+			cout << " Всего Доброго!" << endl;
 			break;
 		default:
-			cout << "Выберите пункт меню корректно";
+			cout << "\nВыберите пункт меню корректно"<< endl;
 			system("pause");
 			break;
 		}
