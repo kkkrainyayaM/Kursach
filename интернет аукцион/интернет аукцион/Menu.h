@@ -18,20 +18,10 @@ using std::string;
 #endif
 
 class Menu {
-		/*static int day;
-		static int month;
-		static int year;*/
 public:
 	static int registration();
 	static Role autorization();
 	static int menuSel();
 	static int menuPart();
-	static void programmTime();
-	/*static int prov_year(int year);
-	static int prov_month(int month);
-	static int prov_day(int day);*/
-	/*static void setDay(int day1);
-	static void setMonth(int month1);
-	static void setYear(int month1);*/
 };
 

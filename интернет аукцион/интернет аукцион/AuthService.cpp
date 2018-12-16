@@ -8,12 +8,20 @@
 		return instance;
 	}
 
+	void AuthService::setCurrentTime(Time& time) {
+		currentTime = time; 
+	}
+
 	void AuthService::setCurrentUser(User& user) {
 		currentUser = user; //странно почему не вызвался конструктор копирования, нужно погуглить
 	}
 
 	User& AuthService::getCurrentUser() {
 		return this->currentUser;
+	}
+
+	Time& AuthService::getCurrentTime() {
+		return this->currentTime;
 	}
     
 	void AuthService::auth() {

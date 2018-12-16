@@ -6,13 +6,14 @@ int main() {
 	SetConsoleOutputCP(1251);
 	char menu1 = NULL;
 	int vozvr;
+	Time* time = new Time();
+	time->setTime();
+	AuthService::getAuthInstance()->setCurrentTime(*time);
 	while (menu1 != 27) {
 		system("cls");
-		//Menu::programmTime();
 		cout << endl << endl << setw(65) << "ÈÍÒÅÐÍÅÒ-ÀÓÊÖÈÎÍ" << endl
 			<< setw(65) << "----------------" << endl;
 		cout << setw(66) << "ÄÎÁÐÎ ÏÎÆÀËÎÂÀÒÜ!" << endl << endl;
-
 		cout << setw(67) << "Âûáåðèòå ïóíêò ìåíþ:" << endl
 			<< setw(65) << "1.Ðåãèñòðàöèÿ" << endl
 			<< setw(58) << "2.Âõîä" << endl
@@ -63,7 +64,7 @@ int main() {
 		}
 		case 27:
 			IDGenerator::getInstance()->~IDGenerator();
-			cout << " Âñåãî Äîáðîãî!" << endl;
+			cout << " ÂÂñåãî Äîáðîãî!" << endl;
 			break;
 		default:
 			cout << "\nÂûáåðèòå ïóíêò ìåíþ êîððåêòíî"<< endl;

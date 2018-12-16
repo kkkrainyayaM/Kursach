@@ -2,6 +2,8 @@
 #include "DAO.h"
 #include <algorithm>
 #include "Vector.h"
+#include "Time.h"
+#include "AuthService.h"
 
 Lot Lot::createLot() {
 	string title, descr;
@@ -19,12 +21,12 @@ Lot Lot::createLot() {
 	cout << "\nСтартовая цена: ";
 	cin >> startPrice;
 	cout << "\nВремя окончания торгов: ";
-	cout << "\nВведите год (цифрами (4 цифры)): ";
-	cin >> finishYear;
-	cout << "\nВведите месяц (цифрами): ";
-	cin >> finishMonth;
 	cout << "\nВведите день (цифрами): ";
 	cin >> finishDay;
+	cout << "\nВведите месяц (цифрами): ";
+	cin >> finishMonth;
+	cout << "\nВведите год (цифрами (4 цифры)): ";
+	cin >> finishYear;
 	return Lot(IDGenerator::getInstance()->getLotId(), title, descr, startPrice, finishDay, finishMonth, finishYear, -1, -1);
 	cout << "\nЛот успешно добавлен!";
 }
@@ -110,13 +112,35 @@ void Lot::setLastStavkaId(int id) {
 
 void Lot::printLot() {
 	cout << endl;
-	cout.width(100);
+	cout.width(115);
 	cout << setfill('_') << '_';
 	cout << setfill(' ') << endl << setw(12) << getID() << '|'
+		<< setw(12) << getStatus() << '|'
 		<< setw(20) << getTitle() << '|'
 		<< setw(20) << getDescr() << '|'
-		<< setw(14) << getDay() << '.' << getMonth() << '.' << getYear() << '|'
-		<< setw(16) << getStartPrice();
+		<< setw(6) << getDay() << '.' << setw(2) << getMonth() << '.' << getYear() << '|'
+		<< setw(16) << getStartPrice() << '|';
+}
+
+string Lot::getStatus() {
+	string status;
+	Time time = AuthService::getAuthInstance()->getCurrentTime();
+	if (getYear() < time.getyear()) {
+		status = "Окончен";
+	}
+	else if (getYear() == time.getyear()){
+		if (getMonth() < time.getmonth()) {
+			status = "Окончен";
+		}
+		else if (getMonth() == time.getmonth()) {
+			if (getDay() <= time.getday()) {
+				status = "Окончен";
+			}
+			else status = "Идут торги";
+		}
+		else status = "Идут торги";
+	} else status = "Идут торги"; 
+	return status;
 }
 
 Vector<Lot>& Lot::filtrLotsByStPrise(Vector<Lot>& lots, float otPr, float doPr) {

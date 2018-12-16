@@ -4,8 +4,7 @@
 #include "IDGenerator.h"
 #include "Stavka.h"
 #include "Vector.h"
-#include "time.h"
-#include <ctime>
+//#include "AuthService.h"
 
 using namespace std;
 class Lot {
@@ -58,5 +57,6 @@ public:
 	static Vector<Lot>& sortLotsByTitle(Vector<Lot>& lots);
 	static Vector<Lot>& sortLotsByStPrice(Vector<Lot>& lots);
 	static Lot createLot();
+	string getStatus();
 	friend ostream& operator<<(ostream& s, Lot& lot);
 };
